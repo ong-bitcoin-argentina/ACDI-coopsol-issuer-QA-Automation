@@ -34,7 +34,9 @@
 		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' ${cucumber.tags} ${cucumber.reporters}</crowdar.cucumber.option>
 
 		<!-- client project custom properties -->
-		<web-app.url>http://www.google.com.ar</web-app.url>
+		<web-app.url>https://alpha.coopsol-issuer.com.ar</web-app.url>
+		<user>crowdar_test2</user>
+		<pass>Crowdar387!</pass>
 
 	</properties>
 	<profiles>
