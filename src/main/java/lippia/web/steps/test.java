@@ -9,8 +9,8 @@ public class test extends PageSteps {
 
     @Given("The client is in google page")
     public void test(){
-        System.out.print(PropertyManager.getProperty("user"));
-        System.out.print(PropertyManager.getProperty("pass"));
+        System.out.println(PropertyManager.getProperty("user"));
+        System.out.println(PropertyManager.getProperty("pass"));
         testService.navigateTest();
 
     }

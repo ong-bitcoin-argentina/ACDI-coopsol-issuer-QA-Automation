@@ -35,8 +35,6 @@
 
 		<!-- client project custom properties -->
 		<web-app.url>https://alpha.coopsol-issuer.com.ar</web-app.url>
-		<user>crowdar_test2</user>
-		<pass>Crowdar387!</pass>
 
 	</properties>
 	<profiles>
@@ -61,6 +59,7 @@
 			<properties>
 				<crowdar.projectType>WEB_FIREFOX</crowdar.projectType>
 				<crowdar.driver.capabilities.json_path>src/main/resources/browsers/firefoxCapabilities.json</crowdar.driver.capabilities.json_path>
+				<crowdar.setupStrategy>web.DownloadLatestStrategy</crowdar.setupStrategy>
 			</properties>
 		</profile>
 		
