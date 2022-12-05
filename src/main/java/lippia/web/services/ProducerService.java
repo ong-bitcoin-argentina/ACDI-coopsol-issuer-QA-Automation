@@ -5,9 +5,11 @@ import com.crowdar.core.actions.ActionManager;
 import com.crowdar.driver.DriverManager;
 import lippia.web.constants.ProducerConstants;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 
@@ -47,12 +49,24 @@ public class ProducerService extends ActionManager {
     }
 
     public static void save() throws InterruptedException {
-        WebDriver driver = DriverManager.getDriverInstance();
+ /*       WebDriver driver = DriverManager.getDriverInstance();
+
         Actions action = new Actions(driver);
         action.moveToElement(getElement(ProducerConstants.SAVE_BUTTON)).click().perform();
+*/
+
+        jsClick(ProducerConstants.SAVE_BUTTON);
         waitInvisibility(ProducerConstants.NEW_PROD_MODAL);
         waitVisibility(ProducerConstants.MESSAGE);
+
         Assert.assertTrue(isVisible(ProducerConstants.MESSAGE));
 
+    }
+
+    public static void jsClick(String xpath) {
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriverInstance(), 30);
+        WebElement el = getElement(xpath);
+        JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriverInstance();
+        js.executeScript("arguments[0].click();", el);
     }
 }

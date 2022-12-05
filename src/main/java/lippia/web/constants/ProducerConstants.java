@@ -25,7 +25,7 @@ public class ProducerConstants {
 
     public static final String DID="name:did";
 
-    public static final String SAVE_BUTTON="xpath://div[contains(@class,'sc-ezWOiH')]/button";
+    public static final String SAVE_BUTTON="xpath://div[contains(@class,'sc-ezWOiH')]/button/p";
     public static final String MESSAGE="class:ant-message-notice-content";
 
 
