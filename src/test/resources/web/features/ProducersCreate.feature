@@ -1,7 +1,7 @@
-@Productores
-Feature: Productores
+@BO @regresion @smoke @productores
+Feature: Como usuario de Coopsol quiero registrar un productor
 
-  @Smoke
+
   Scenario: Caso exitoso de registro de un nuevo productor
 
     Given estoy logueado en la web de coopsol con el usuario “User_Admin"
