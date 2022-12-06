@@ -48,25 +48,18 @@ public class ProducerService extends ActionManager {
 
     }
 
-    public static void save() throws InterruptedException {
- /*       WebDriver driver = DriverManager.getDriverInstance();
+    public static void save()  {
+        WebDriver driver = DriverManager.getDriverInstance();
 
         Actions action = new Actions(driver);
         action.moveToElement(getElement(ProducerConstants.SAVE_BUTTON)).click().perform();
-*/
-
-        jsClick(ProducerConstants.SAVE_BUTTON);
-        waitInvisibility(ProducerConstants.NEW_PROD_MODAL);
-        waitVisibility(ProducerConstants.MESSAGE);
-
-        Assert.assertTrue(isVisible(ProducerConstants.MESSAGE));
 
     }
 
-    public static void jsClick(String xpath) {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriverInstance(), 30);
-        WebElement el = getElement(xpath);
-        JavascriptExecutor js = (JavascriptExecutor) DriverManager.getDriverInstance();
-        js.executeScript("arguments[0].click();", el);
-    }
+   public static void  successMessage(){
+       waitInvisibility(ProducerConstants.NEW_PROD_MODAL);
+       waitVisibility(ProducerConstants.MESSAGE);
+       Assert.assertTrue(isVisible(ProducerConstants.MESSAGE));
+
+   }
 }
