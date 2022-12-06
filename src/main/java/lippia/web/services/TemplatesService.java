@@ -61,10 +61,6 @@ public class TemplatesService extends ActionManager {
                     break;
                 }
             }
-
-            waitVisibility(TemplatesConstants.ACCEPT_BUTTON);
-            click(TemplatesConstants.ACCEPT_BUTTON);
-            waitInvisibility(TemplatesConstants.ACCEPT_BUTTON);
         }
         catch(Exception f){
             for (int i = 2; ; i++) {
@@ -76,9 +72,18 @@ public class TemplatesService extends ActionManager {
                 }
             }
 
-            waitVisibility(TemplatesConstants.ACCEPT_BUTTON);
-            click(TemplatesConstants.ACCEPT_BUTTON);
-            waitInvisibility(TemplatesConstants.ACCEPT_BUTTON);
+
         }
+    }
+    public static void acceptDeleteTemplate(){
+        waitVisibility(TemplatesConstants.ACCEPT_BUTTON);
+        click(TemplatesConstants.ACCEPT_BUTTON);
+        waitInvisibility(TemplatesConstants.ACCEPT_BUTTON);
+
+    }
+
+    public static void successMessageDelete(){
+        waitVisibility(TemplatesConstants.SUCCESS_MESSAGE);
+        Assert.assertEquals(getText(TemplatesConstants.SUCCESS_MESSAGE),"Template eliminado exitosamente");
     }
 }

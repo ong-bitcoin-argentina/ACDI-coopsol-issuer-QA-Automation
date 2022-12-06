@@ -34,7 +34,27 @@ public class TemplatesSteps extends PageSteps {
     public void checkResult(){
         TemplatesService.successMessage();
         TemplatesService.cleanTemplates();
+        TemplatesService.acceptDeleteTemplate();
 
+    }
+    @When("el admin hace clic en \"Eliminar\" un tipo de credencial")
+    public void deleteTemplate(){
+        TemplatesService.cleanTemplates();
+    }
+
+    @And("el admin hace clic en aceptar")
+    public void acceptDelete(){
+        TemplatesService.acceptDeleteTemplate();
+    }
+
+    @Then("se muestra un mensaje de \"Template eliminado exitosamente\"")
+    public void showMessage(){
+          TemplatesService.successMessageDelete();
+    }
+
+    @And("el admin tiene tipos de credenciales")
+    public void goToCred(){
+        TemplatesService.goToTemplates();
     }
 
 
