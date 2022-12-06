@@ -2,7 +2,7 @@
 Feature: Como usuario de Coopsol quiero registrar un productor
 
 
-  Scenario: Caso exitoso de registro de un nuevo productor
+  Scenario: Caso exitoso de registro de un nuevo productor ##MM-844
 
     Given estoy logueado en la web de coopsol con el usuario “User_Admin"
     When hago click en la pestaña "Productores"
