@@ -10,10 +10,6 @@ import lippia.web.services.TemplatesService;
 
 public class TemplatesSteps extends PageSteps {
 
-    @Given("el admin esta logueado en la web de coopsol")
-    public void doLogin(){
-        TemplatesService.doLogin();
-    }
 
     @When("el admin selecciona \"Tipos de credenciales\"")
     public void goToTemplate(){

@@ -12,14 +12,6 @@ import java.util.List;
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
 public class TemplatesService extends ActionManager {
-    public static void doLogin() {
-        navigateTo(PropertyManager.getProperty("web.base.url"));
-        setInput(TemplatesConstants.USER_INPUT, PropertyManager.getProperty("user"));
-        setInput(TemplatesConstants.PASS_INPUT, PropertyManager.getProperty("pass"));
-        click(TemplatesConstants.LOGIN_BUTTON);
-        waitVisibility(TemplatesConstants.MENU_ITEM);
-        Assert.assertTrue(isVisible(TemplatesConstants.MENU_ITEM));
-    }
 
     public static void goToTemplates(){
         click(TemplatesConstants.MENU_ITEM);
