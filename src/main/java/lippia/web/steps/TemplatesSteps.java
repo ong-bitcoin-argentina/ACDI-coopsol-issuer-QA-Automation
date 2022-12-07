@@ -11,10 +11,6 @@ import lippia.web.services.TemplatesService;
 public class TemplatesSteps extends PageSteps {
 
 
-    @When("el admin selecciona \"Tipos de credenciales\"")
-    public void goToTemplate(){
-        TemplatesService.goToTemplates();
-    }
 
     @And("el admin da click en el boton \"Nuevo Template\"")
     public void clickNewTemplates(){

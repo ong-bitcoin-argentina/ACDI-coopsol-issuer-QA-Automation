@@ -6,8 +6,10 @@ import lippia.web.constants.TemplatesConstants;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
@@ -23,7 +25,8 @@ public class TemplatesService extends ActionManager {
     }
 
     public static void fillNameandEmisor(String name,String emisor) {
-        setInput(TemplatesConstants.INPUT_NAME, name);
+        BigInteger b = new BigInteger(256, new Random());
+        setInput(TemplatesConstants.INPUT_NAME, name+b);
         click(TemplatesConstants.INPUT_EMISOR);
         for (int i = 1; ; i++) {
             if (getElement(TemplatesConstants.EMISOR_OPTION, String.valueOf(i)).getAttribute("title").equals(emisor)) {
