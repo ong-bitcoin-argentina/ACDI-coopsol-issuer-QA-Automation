@@ -45,8 +45,13 @@ public class LoginSteps extends PageSteps {
         LoginService.setPassword(password);
     }
 
-    @Then("Se muestra el mensaje \"Campo obligatorio\"")
-    public void respuesta() {
-        LoginService.verifyMessage();
+    @Then("Se muestra el mensaje {string}")
+    public void respuesta(String message) {
+        LoginService.verifyMessage(message);
+    }
+
+    @Given("que el admin esta logueado en la web de coopsol.")
+    public void queElAdminEstaLogueadoEnLaWebDeCoopsol() {
+        LoginService.login();
     }
 }

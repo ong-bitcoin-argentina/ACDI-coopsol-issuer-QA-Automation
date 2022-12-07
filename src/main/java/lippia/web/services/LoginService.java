@@ -8,6 +8,7 @@ import org.testng.Assert;
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
 public class LoginService extends ActionManager {
+
     public static void navegarWeb() {
         navigateTo(PropertyManager.getProperty("web.base.url"));
     }
@@ -25,8 +26,15 @@ public class LoginService extends ActionManager {
         Assert.assertTrue(getElement(LoginConstants.CREDENCIALES_PAGE).isDisplayed(), "No se encontro la pagina credenciales");
     }
 
-    public static void verifyMessage() {
-        waitVisibility(LoginConstants.MESSAGE_ERROR);
-        Assert.assertTrue(getElement(LoginConstants.MESSAGE_ERROR).isDisplayed(), "No se encontro el mensaje");
+    public static void verifyMessage(String message) {
+        waitVisibility(String.format(LoginConstants.MESSAGE_ERROR, message));
+        Assert.assertTrue(getElement(String.format(LoginConstants.MESSAGE_ERROR, message)).isDisplayed(), "No se encontro el mensaje");
+    }
+
+    public static void login() {
+        navegarWeb();
+        setUser(PropertyManager.getProperty("user"));
+        setPassword(PropertyManager.getProperty("pass"));
+        BaseService.clickButton("login");
     }
 }

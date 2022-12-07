@@ -7,5 +7,5 @@ public class LoginConstants {
     public static final String PASSWORD_INPUT = "id:password";
     public static final String LOGIN_BUTTON = "xpath://*[@class='ButtonLogin']/button";
     public static final String CREDENCIALES_PAGE = "xpath://h1[contains(text(),'Credenciales')]";
-    public static final String MESSAGE_ERROR = "xpath://*[contains(text(),'Campo obligatorio')]";
+    public static final String MESSAGE_ERROR = "xpath://*[contains(text(),'%s')]";
 }
