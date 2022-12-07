@@ -22,11 +22,13 @@ public class TemplatesSteps extends PageSteps {
         TemplatesService.fillNameandEmisor(name,emisor);
     }
 
-    @Then("se muestran un mensaje de \"Template creado exitosamente\"")
-    public void checkResult(){
-        TemplatesService.successMessage();
-        TemplatesService.cleanTemplates();
-        TemplatesService.acceptDeleteTemplate();
+    @Then("se muestran un mensaje de {string}")
+    public void checkResult(String message){
+        TemplatesService.successMessage(message);
+        if (message.equals("Template creado exitosamente")){
+            TemplatesService.cleanTemplates();
+            TemplatesService.acceptDeleteTemplate();
+        }
 
     }
     @When("el admin hace clic en \"Eliminar\" un tipo de credencial")
@@ -39,15 +41,23 @@ public class TemplatesSteps extends PageSteps {
         TemplatesService.acceptDeleteTemplate();
     }
 
-    @Then("se muestra un mensaje de \"Template eliminado exitosamente\"")
-    public void showMessage(){
-          TemplatesService.successMessageDelete();
-    }
 
     @And("el admin tiene tipos de credenciales")
     public void goToCred(){
         TemplatesService.goToTemplates();
     }
+
+    @And("el admin selecciona el boton \"Editar\" al costado derecho del template del primer resultado.")
+    public void EditCred(){TemplatesService.clickEditCred();}
+
+    @And("el admin hace click en la categoria de la credencial")
+    public void clickCat(){TemplatesService.clickCategory();}
+
+    @And("el admin elige la Categoria (.*)")
+    public void fillCat(String category){TemplatesService.fillCat(category);}
+
+    @And("el admin da click en \"Guardar\"")
+    public void saveCat(){TemplatesService.clickSave();}
 
 
 }

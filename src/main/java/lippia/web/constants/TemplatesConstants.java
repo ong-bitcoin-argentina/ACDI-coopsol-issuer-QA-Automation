@@ -18,6 +18,14 @@ public class TemplatesConstants {
     public static final String NEXT_BUTTON="xpath://*[@id='root']/div/div/div/div/div/div[2]/div/div[2]/div/div/div/ul/li[4]/button";
     public static final String DELETE_BUTTON="xpath://*[@id='root']/div/div/div/div/div/div[2]/div/div[2]/div/div/div/div/div/div/table/tbody/tr[%s]/td[4]/button";
 
+    public static final String EDIT_BUTTON="xpath://*[@id='root']/div/div/div/div/div/div[2]/div/div[2]/div/div/div/div/div/div/table/tbody/tr[2]/td[4]/a";
+
+    public static final String CATEGORY="xpath://*[@id='root']/div/div/div/div/div/div[2]/div/div/div[1]/div[2]";
+
+    public static final String SAVE="xpath://*[@id='root']/div/div/div/div/div/div[2]/div/div/div[6]/button[2]";
+
+    public static final String CAT_OPTIONS="xpath://div[contains(@class,'ant-select-item-option')]/div[%s]";
+
 
 
 }

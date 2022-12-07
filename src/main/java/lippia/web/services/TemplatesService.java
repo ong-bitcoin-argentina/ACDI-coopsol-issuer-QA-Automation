@@ -1,17 +1,16 @@
 package lippia.web.services;
 
-import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
+import com.crowdar.driver.DriverManager;
 import lippia.web.constants.TemplatesConstants;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-import static com.crowdar.core.actions.WebActionManager.navigateTo;
+
 
 public class TemplatesService extends ActionManager {
 
@@ -40,9 +39,9 @@ public class TemplatesService extends ActionManager {
         click(TemplatesConstants.ACCEPT_BUTTON);
     }
 
-    public static void successMessage(){
+    public static void successMessage(String message){
         waitVisibility(TemplatesConstants.SUCCESS_MESSAGE);
-        Assert.assertEquals(getText(TemplatesConstants.SUCCESS_MESSAGE),"Template creado exitosamente");
+        Assert.assertEquals(getText(TemplatesConstants.SUCCESS_MESSAGE),message);
     }
 
     public static void cleanTemplates(){
@@ -77,8 +76,26 @@ public class TemplatesService extends ActionManager {
 
     }
 
-    public static void successMessageDelete(){
-        waitVisibility(TemplatesConstants.SUCCESS_MESSAGE);
-        Assert.assertEquals(getText(TemplatesConstants.SUCCESS_MESSAGE),"Template eliminado exitosamente");
+
+    public static void clickEditCred(){
+        click(TemplatesConstants.EDIT_BUTTON);
+    }
+
+    public static void clickCategory(){
+        click(TemplatesConstants.CATEGORY);
+    }
+
+    public static void fillCat(String category){
+        for (int i=1;i<7;i++){
+            if(getText(TemplatesConstants.CAT_OPTIONS,String.valueOf(i)).equals(category)){
+                click(TemplatesConstants.CAT_OPTIONS,String.valueOf(i));
+                break;
+            }
+        }
+    }
+    public static void clickSave() {
+        WebDriver driver = DriverManager.getDriverInstance();
+        Actions action = new Actions(driver);
+        action.moveToElement(getElement(TemplatesConstants.SAVE)).click().perform();
     }
 }
