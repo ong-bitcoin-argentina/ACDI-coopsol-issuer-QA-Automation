@@ -75,9 +75,6 @@ public class ProducerService extends ActionManager {
        getElement(ProducerConstants.NOMBRE).sendKeys(Keys.CONTROL,"a");
        getElement(ProducerConstants.NOMBRE).sendKeys(Keys.DELETE);
        setInput(ProducerConstants.NOMBRE,PropertyManager.getProperty("prod.edit.nombre"));
-       getElement(ProducerConstants.DNI).sendKeys(Keys.CONTROL,"a");
-       getElement(ProducerConstants.DNI).sendKeys(Keys.DELETE);;
-       setInput(ProducerConstants.DNI,PropertyManager.getProperty("prod.edit.dni"));
        getElement(ProducerConstants.EMAIL).sendKeys(Keys.CONTROL,"a");
        getElement(ProducerConstants.EMAIL).sendKeys(Keys.DELETE);;
        setInput(ProducerConstants.EMAIL,PropertyManager.getProperty("prod.edit.email"));
@@ -87,9 +84,6 @@ public class ProducerService extends ActionManager {
        getElement(ProducerConstants.CUIT).sendKeys(Keys.CONTROL,"a");
        getElement(ProducerConstants.CUIT).sendKeys(Keys.DELETE);
        setInput(ProducerConstants.CUIT,PropertyManager.getProperty("prod.edit.cuit"));
-       getElement(ProducerConstants.DID).sendKeys(Keys.CONTROL,"a");
-       getElement(ProducerConstants.DID).sendKeys(Keys.DELETE);
-       setInput(ProducerConstants.DID,PropertyManager.getProperty("prod.edit.DID"));
    }
 
    public static void filterNewProdDetails(){
@@ -102,6 +96,7 @@ public class ProducerService extends ActionManager {
    }
 
    public static void checkNewProdDetails(){
+        waitVisibility(ProducerConstants.PROD_LASTNAME);
         Assert.assertEquals(getText(ProducerConstants.PROD_LASTNAME),PropertyManager.getProperty("prod.edit.apellido"));
        Assert.assertEquals(getText(ProducerConstants.PROD_FIRSTNAME),PropertyManager.getProperty("prod.edit.nombre"));
        String dni = getText(ProducerConstants.PROD_DNI).replace(".","");
