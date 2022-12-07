@@ -1,6 +1,7 @@
 @BO @regresion @credenciales @smoke
-Feature: Como usuario de Coopsol Issuer quiero acceder a los Tipos de credenciales
-
+Feature: Templates
+  Como usuario de Coopsol Issuer
+  Quiero acceder a los Tipos de credenciales
 
   Scenario Outline: crear un "Nuevo Template" ##MM-856
     Given el admin esta logueado en la web de coopsol
