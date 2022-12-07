@@ -25,7 +25,7 @@ public class LoginSteps extends PageSteps {
         LoginService.setPassword(PropertyManager.getProperty("pass"));
     }
 
-    @When("Hace click en el boton {string}")
+    @When("Hace click en el boton (.*)")
     public void haceClickEnElBotonLogin(String button) {
         BaseService.clickButton(button);
     }
@@ -35,17 +35,17 @@ public class LoginSteps extends PageSteps {
         LoginService.verifyLogin();
     }
 
-    @When("El usuario completa Usuario con {string}")
+    @When("El usuario completa Usuario con (.*)")
     public void elUsuarioCompletaUsuarioConUser(String user) {
         LoginService.setUser(user);
     }
 
-    @When("El usuario completa Contraseña con {string}")
+    @When("El usuario completa Contraseña con (.*)")
     public void elUsuarioCompletaConPassword(String password) {
         LoginService.setPassword(password);
     }
 
-    @Then("Se muestra el mensaje {string}")
+    @Then("Se muestra el mensaje (.*)")
     public void respuesta(String message) {
         LoginService.verifyMessage(message);
     }
@@ -53,5 +53,15 @@ public class LoginSteps extends PageSteps {
     @Given("que el admin esta logueado en la web de coopsol.")
     public void queElAdminEstaLogueadoEnLaWebDeCoopsol() {
         LoginService.login();
+    }
+
+    @When("el usuario selecciona {string}")
+    public void elUsuarioSeleccionaCerrarSesion(String button){
+        BaseService.clickButton(button);
+    }
+
+    @Then("se redirije a pantalla del Log in")
+    public void seRedirijeAPantallaDelLogIn() {
+        LoginService.verifyLogout();
     }
 }

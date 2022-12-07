@@ -28,3 +28,9 @@ Feature: Login
       | crowdar_test2 |             | "Campo obligatorio"                     |
       | ssadasdas     | sadsadsada  | "Los datos ingresados no son correctos" |
       |               |             | "Campo obligatorio"                     |
+
+  @smoke @Nahuel #MM-828
+  Scenario: Log out exitoso
+    Given que el admin esta logueado en la web de coopsol.
+    When el usuario selecciona "Cerrar sesión"
+    Then se redirije a pantalla del Log in

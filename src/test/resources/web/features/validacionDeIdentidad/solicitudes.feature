@@ -1,5 +1,5 @@
 @BO @regresion @smoke @validacionDeIdentidad
-Feature: Visualizar solicitudes aprobadas
+Feature: Visualizar solicitudes
   Como admin de Coopsol
   quiero acceder a Validacion de Identidades
   para poder visualizar las Solicitudes Aprobadas.
