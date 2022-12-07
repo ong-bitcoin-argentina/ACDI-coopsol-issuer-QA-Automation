@@ -26,7 +26,7 @@ public class LoginSteps extends PageSteps {
     }
 
     @When("Hace click en el boton {string}")
-    public void haceClickEnElBotonLogin(String button) {
+    public void haceClickEnElBotonLogin(String button) throws InterruptedException {
         BaseService.clickButton(button);
     }
 
@@ -51,7 +51,7 @@ public class LoginSteps extends PageSteps {
     }
 
     @Given("que el admin esta logueado en la web de coopsol.")
-    public void queElAdminEstaLogueadoEnLaWebDeCoopsol() {
+    public void queElAdminEstaLogueadoEnLaWebDeCoopsol() throws InterruptedException {
         LoginService.login();
     }
 }

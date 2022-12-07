@@ -31,7 +31,7 @@ public class LoginService extends ActionManager {
         Assert.assertTrue(getElement(String.format(LoginConstants.MESSAGE_ERROR, message)).isDisplayed(), "No se encontro el mensaje");
     }
 
-    public static void login() {
+    public static void login() throws InterruptedException {
         navegarWeb();
         setUser(PropertyManager.getProperty("user"));
         setPassword(PropertyManager.getProperty("pass"));
