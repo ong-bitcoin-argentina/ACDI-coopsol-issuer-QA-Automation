@@ -1,9 +1,6 @@
 package lippia.web.constants;
 
 public class ProducerConstants {
-    public static final String USER_INPUT="xpath://*[@id='username']";
-    public static final String PASS_INPUT="xpath://*[@id='password']";
-    public static final String LOGIN_BUTTON="xpath://*[@id='root']/div/div/div/div/div/div[2]/form/div[3]/div/div/div/div/div/button";
 
     public static final String MENU_ITEM="xpath://*[@id='root']/div/div/div/div/div/div[1]/div[2]/div[2]/ul/li[3]/span";
 

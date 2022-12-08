@@ -12,14 +12,6 @@ import org.testng.Assert;
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
 public class ProducerService extends ActionManager {
-    public static void doLogin() {
-        navigateTo(PropertyManager.getProperty("web.base.url"));
-        setInput(ProducerConstants.USER_INPUT, PropertyManager.getProperty("user"));
-        setInput(ProducerConstants.PASS_INPUT, PropertyManager.getProperty("pass"));
-        click(ProducerConstants.LOGIN_BUTTON);
-        waitVisibility(ProducerConstants.MENU_ITEM);
-        Assert.assertTrue(isVisible(ProducerConstants.MENU_ITEM));
-    }
 
     public static void goToProducers(){
         click(ProducerConstants.MENU_ITEM);

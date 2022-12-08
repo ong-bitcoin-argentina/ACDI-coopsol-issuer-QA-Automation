@@ -4,11 +4,13 @@ import com.crowdar.core.LocatorManager;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.driver.DriverManager;
 import lippia.web.constants.LoginConstants;
+import lippia.web.constants.ProducerConstants;
 import lippia.web.constants.TemplatesConstants;
 import lippia.web.constants.ValidacionDeIdentidadConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 
 public class BaseService extends ActionManager {
@@ -34,6 +36,12 @@ public class BaseService extends ActionManager {
             case "Tipos de credenciales":
                 click(TemplatesConstants.MENU_ITEM);
                 break;
+
+            case "Productores":
+                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Productores");
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Productores");
+                break;
+
         }
     }
 
