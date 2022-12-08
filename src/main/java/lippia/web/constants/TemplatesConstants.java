@@ -24,7 +24,7 @@ public class TemplatesConstants {
 
     public static final String SAVE="xpath://*[@id='root']/div/div/div/div/div/div[2]/div/div/div[6]/button[2]";
 
-    public static final String CAT_OPTIONS="xpath://div[contains(@class,'ant-select-item-option')]/div[%s]";
+    public static final String CAT_OPTIONS="xpath://div[contains(@class,'rc-virtual-list-holder-inner')]/div[%s]";
 
 
 
