@@ -1,4 +1,4 @@
-@BO @Regresion @actividades
+@BO @regresion @actividades
 Feature: Actividades
   Como usuario de Coopsol Issuer
   Quiero ver las actividades de los usuarios
