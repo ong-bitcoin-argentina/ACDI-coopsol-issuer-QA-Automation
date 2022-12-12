@@ -21,7 +21,7 @@ Feature: Login
     When Hace click en el boton "login"
     Then Se muestra el mensaje <respuesta>
 
-    #@Ignore
+    @Ignore
     Examples:
       | user          | password    | respuesta                               |
       |               | Crowdar387! | "Campo obligatorio"                     |

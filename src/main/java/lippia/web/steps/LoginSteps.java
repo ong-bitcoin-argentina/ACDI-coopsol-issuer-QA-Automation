@@ -25,7 +25,7 @@ public class LoginSteps extends PageSteps {
         LoginService.setPassword(PropertyManager.getProperty("pass"));
     }
 
-    @When("Hace click en el boton {string}")
+    @When("^Hace click en el boton \"(.*)\"$")
     public void haceClickEnElBotonLogin(String button) {
         BaseService.clickButton(button);
     }
