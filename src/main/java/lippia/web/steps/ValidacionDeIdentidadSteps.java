@@ -10,12 +10,12 @@ import org.openqa.selenium.WebElement;
 
 public class ValidacionDeIdentidadSteps extends PageSteps {
 
-    @And("el admin se encuentra en (.*)")
+    @And("el admin se encuentra en {string}")
     public void elAdminSeEncuentraEn(String button) {
         BaseService.clickButton(button);
     }
 
-    @When("el admin selecciona (.*)")
+    @When("el admin selecciona {string}")
     public void elAdminSelecciona(String button) {
         BaseService.clickButton(button);
     }

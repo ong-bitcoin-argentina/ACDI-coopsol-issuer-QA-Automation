@@ -15,17 +15,17 @@ public class LoginSteps extends PageSteps {
         LoginService.navegarWeb();
     }
 
-    @When("El usuario completa Usuario con <user>")
+    @When("El usuario completa Usuario con user")
     public void ElUsuarioCompletaUsuario() {
         LoginService.setUser(PropertyManager.getProperty("user"));
     }
 
-    @When("El usuario completa Contraseña con <password>")
+    @When("El usuario completa Contraseña con password")
     public void elUsuarioCompletaContraseña() {
         LoginService.setPassword(PropertyManager.getProperty("pass"));
     }
 
-    @When("Hace click en el boton (.*)")
+    @When("Hace click en el boton {string}")
     public void haceClickEnElBotonLogin(String button) {
         BaseService.clickButton(button);
     }
@@ -35,17 +35,17 @@ public class LoginSteps extends PageSteps {
         LoginService.verifyLogin();
     }
 
-    @When("El usuario completa Usuario con (.*)")
+    @When("El usuario completa Usuario con '(.*)'")
     public void elUsuarioCompletaUsuarioConUser(String user) {
         LoginService.setUser(user);
     }
 
-    @When("El usuario completa Contraseña con (.*)")
+    @When("El usuario completa Contraseña con '(.*)'")
     public void elUsuarioCompletaConPassword(String password) {
         LoginService.setPassword(password);
     }
 
-    @Then("Se muestra el mensaje (.*)")
+    @Then("Se muestra el mensaje {string}")
     public void respuesta(String message) {
         LoginService.verifyMessage(message);
     }
