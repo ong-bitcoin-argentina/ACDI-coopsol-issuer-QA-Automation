@@ -24,8 +24,10 @@ public class TemplatesService extends ActionManager {
     }
 
     public static void fillNameandEmisor(String name,String emisor) {
-        BigInteger b = new BigInteger(256, new Random());
+        /*BigInteger b = new BigInteger(256, new Random());
         setInput(TemplatesConstants.INPUT_NAME, name+b);
+         */
+        setInput(TemplatesConstants.INPUT_NAME, name);
         click(TemplatesConstants.INPUT_EMISOR);
         for (int i = 1; ; i++) {
             if (getElement(TemplatesConstants.EMISOR_OPTION, String.valueOf(i)).getAttribute("title").equals(emisor)) {

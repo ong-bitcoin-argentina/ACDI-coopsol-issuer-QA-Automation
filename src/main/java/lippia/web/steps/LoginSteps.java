@@ -25,13 +25,8 @@ public class LoginSteps extends PageSteps {
         LoginService.setPassword(PropertyManager.getProperty("pass"));
     }
 
-<<<<<<< HEAD
-    @When("Hace click en el boton {string}")
-    public void haceClickEnElBotonLogin(String button) throws InterruptedException {
-=======
     @When("^Hace click en el boton \"(.*)\"$")
     public void haceClickEnElBotonLogin(String button) {
->>>>>>> ac7778017b84ba58ceb4d69fc596f88197911b4c
         BaseService.clickButton(button);
     }
 
