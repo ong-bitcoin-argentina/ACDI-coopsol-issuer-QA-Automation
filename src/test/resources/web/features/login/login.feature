@@ -1,4 +1,4 @@
-@bo @regresion @login
+@BO @regresion @login
 Feature: Login
   Como usuario de DIDI
   quiero Loguearme
@@ -21,7 +21,7 @@ Feature: Login
     When Hace click en el boton "login"
     Then Se muestra el mensaje <respuesta>
 
-    @Ignore
+
     Examples:
       | user          | password    | respuesta                               |
       |               | Crowdar387! | "Campo obligatorio"                     |
@@ -29,7 +29,7 @@ Feature: Login
       | ssadasdas     | sadsadsada  | "Los datos ingresados no son correctos" |
       |               |             | "Campo obligatorio"                     |
 
-  @smoke @Ignore #MM-828
+  @smoke  #MM-828
   Scenario: Log out exitoso
     Given que el admin esta logueado en la web de coopsol.
     When el usuario selecciona "Cerrar sesión"

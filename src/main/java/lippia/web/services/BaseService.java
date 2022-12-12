@@ -18,8 +18,8 @@ public class BaseService extends ActionManager {
             case "login":
                 click(LoginConstants.LOGIN_BUTTON);
                 break;
-            case "Validacion de Identidades":
-                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Validacion de Identidades");
+            case "Validación de identidades":
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Validación de identidades");
                 break;
             case "Solicitudes Aprobadas":
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Solicitudes Aprobadas");
