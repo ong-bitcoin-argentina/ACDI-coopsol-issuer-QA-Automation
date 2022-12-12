@@ -1,4 +1,4 @@
-@BO @regresion @credenciales @smoke @prueba
+@BO @regresion @credenciales @smoke
 Feature: Templates
   Como usuario de Coopsol Issuer
   Quiero acceder a los Tipos de credenciales

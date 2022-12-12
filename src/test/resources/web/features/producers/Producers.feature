@@ -1,4 +1,4 @@
-@BO @regresion @smoke @productores @prueba
+@BO @regresion @smoke @productores
 Feature: Productores
 
   Como usuario de Coopsol

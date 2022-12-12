@@ -5,6 +5,7 @@ Feature: Visualizar solicitudes
   para poder visualizar las Solicitudes Aprobadas.
 
   #MM-907
+
   Scenario: Vizualizar Solicitudes Aprobadas exitosamente.
     Given que el admin esta logueado en la web de coopsol.
     And el admin se encuentra en "Validación de identidades"
