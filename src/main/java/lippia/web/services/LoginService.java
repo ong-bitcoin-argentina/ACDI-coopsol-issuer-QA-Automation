@@ -37,4 +37,9 @@ public class LoginService extends ActionManager {
         setPassword(PropertyManager.getProperty("pass"));
         BaseService.clickButton("login");
     }
+
+    public static void verifyLogout() {
+        BaseService.waitLocatedElement(LoginConstants.LOGIN_BUTTON, 5);
+        Assert.assertTrue(getElement(LoginConstants.LOGIN_BUTTON).isDisplayed(), "No se encontro la pagina de login");
+    }
 }

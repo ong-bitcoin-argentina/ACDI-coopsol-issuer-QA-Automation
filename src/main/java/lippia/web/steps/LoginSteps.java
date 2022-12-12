@@ -15,18 +15,23 @@ public class LoginSteps extends PageSteps {
         LoginService.navegarWeb();
     }
 
-    @When("El usuario completa Usuario con <user>")
+    @When("El usuario completa Usuario con user")
     public void ElUsuarioCompletaUsuario() {
         LoginService.setUser(PropertyManager.getProperty("user"));
     }
 
-    @When("El usuario completa Contraseña con <password>")
+    @When("El usuario completa Contraseña con password")
     public void elUsuarioCompletaContraseña() {
         LoginService.setPassword(PropertyManager.getProperty("pass"));
     }
 
+<<<<<<< HEAD
     @When("Hace click en el boton {string}")
     public void haceClickEnElBotonLogin(String button) throws InterruptedException {
+=======
+    @When("^Hace click en el boton \"(.*)\"$")
+    public void haceClickEnElBotonLogin(String button) {
+>>>>>>> ac7778017b84ba58ceb4d69fc596f88197911b4c
         BaseService.clickButton(button);
     }
 
@@ -35,12 +40,12 @@ public class LoginSteps extends PageSteps {
         LoginService.verifyLogin();
     }
 
-    @When("El usuario completa Usuario con {string}")
+    @When("El usuario completa Usuario con '(.*)'")
     public void elUsuarioCompletaUsuarioConUser(String user) {
         LoginService.setUser(user);
     }
 
-    @When("El usuario completa Contraseña con {string}")
+    @When("El usuario completa Contraseña con '(.*)'")
     public void elUsuarioCompletaConPassword(String password) {
         LoginService.setPassword(password);
     }
@@ -53,5 +58,15 @@ public class LoginSteps extends PageSteps {
     @Given("que el admin esta logueado en la web de coopsol.")
     public void queElAdminEstaLogueadoEnLaWebDeCoopsol() throws InterruptedException {
         LoginService.login();
+    }
+
+    @When("el usuario selecciona {string}")
+    public void elUsuarioSeleccionaCerrarSesion(String button){
+        BaseService.clickButton(button);
+    }
+
+    @Then("se redirije a pantalla del Log in")
+    public void seRedirijeAPantallaDelLogIn() {
+        LoginService.verifyLogout();
     }
 }

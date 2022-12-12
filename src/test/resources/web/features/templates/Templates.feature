@@ -1,11 +1,10 @@
-@BO @regresion @credenciales @smoke
+@BO @regresion @credenciales @smoke @prueba
 Feature: Templates
   Como usuario de Coopsol Issuer
   Quiero acceder a los Tipos de credenciales
 
   ##El nombre se genera de forma dinámica y queda concatenado al que se muestra en el example
   ##MM-856
-  @Ignore
   Scenario Outline: crear un "Nuevo Template"
     Given que el admin esta logueado en la web de coopsol.
     When  el admin selecciona "Tipos de credenciales"

@@ -4,6 +4,7 @@ Feature: Actividades
   Quiero ver las actividades de los usuarios
 
   ##MM-837
+  @prueba
   Scenario: Visualizar el listados de actividades
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Actividades"

@@ -10,7 +10,6 @@ import lippia.web.constants.ValidacionDeIdentidadConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 
 public class BaseService extends ActionManager {
@@ -32,11 +31,9 @@ public class BaseService extends ActionManager {
                 waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Actividades");
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Actividades");
                 break;
-
             case "Tipos de credenciales":
                 click(TemplatesConstants.MENU_ITEM);
                 break;
-
             case "Productores":
                 waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Productores");
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Productores");

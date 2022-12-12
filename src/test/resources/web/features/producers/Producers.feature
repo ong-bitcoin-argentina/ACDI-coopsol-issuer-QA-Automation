@@ -1,11 +1,10 @@
-@BO @regresion @smoke @productores
+@BO @regresion @smoke @productores @prueba
 Feature: Productores
 
   Como usuario de Coopsol
   Quiero acceder a "Productores"
 
 ##MM-844
-  @Ignore
   Scenario: Caso exitoso de registro de un nuevo productors
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Productores"
@@ -15,7 +14,7 @@ Feature: Productores
     Then se muestran un mensaje de "Productor creado exitosamente"
 
     #MM-873
-  @prueba
+
   Scenario: Caso exitoso editar un productor
 
     Given que el admin esta logueado en la web de coopsol.
