@@ -10,7 +10,7 @@ import lippia.web.services.LoginService;
 
 public class LoginSteps extends PageSteps {
 
-    @Given("El usuario se encuentra en <Coopsol Issuer>")
+    @Given("El usuario se encuentra en Coopsol Issuer")
     public void homeCoopSol(){
         LoginService.navegarWeb();
     }
