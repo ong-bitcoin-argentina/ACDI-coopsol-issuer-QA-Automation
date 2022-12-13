@@ -1,11 +1,11 @@
-@BO @regresion @login
+@BO @regresion @login @BUG_1124
 Feature: Login
   Como usuario de DIDI
   quiero Loguearme
   para poder operar en el BO.
 
   Background:
-    Given El usuario se encuentra en <Coopsol Issuer>
+    Given El usuario se encuentra en Coopsol Issuer
 
   @smoke #MM-827
   Scenario: Login exitoso
