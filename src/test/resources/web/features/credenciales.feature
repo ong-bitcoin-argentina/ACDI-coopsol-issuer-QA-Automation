@@ -11,3 +11,5 @@ Feature: Credenciales
     When selecciono la primer credencial haciendo click en el checkbox ubicado a la izquierda
     When hago click en el boton "ELIMINAR SELECCIONADOS”
     Then se muestra el mensaje "Se ha revocado exitosamente la credencial"
+
+
