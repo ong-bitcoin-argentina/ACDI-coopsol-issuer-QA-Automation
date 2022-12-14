@@ -35,13 +35,4 @@ public class PasswordSteps extends PageSteps {
         PasswordService.verifyMessage(message);
     }
 
-    @And("hago click en el campo Nueva contraseña y completo")
-    public void hagoClickEnElCampoNuevaContraseñaYCompleto() {
-        PasswordService.setNewPassword(PropertyManager.getProperty("pass"));
-    }
-
-    @And("hago click en el campo Confirmar nueva contraseña y completo")
-    public void hagoClickEnElCampoConfirmarNuevaContraseñaYCompleto() {
-        PasswordService.setRepeatNewPassword(PropertyManager.getProperty("pass"));
-    }
 }
