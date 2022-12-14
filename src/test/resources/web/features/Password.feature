@@ -1,7 +1,7 @@
 @BO @regresion @smoke @configuracion
 
 Feature: Como usuario de Coopsol quiero cambiar contraseña desde la web
-
+@Nahuel
   Scenario: Caso exitoso cambiar contraseña
     Given que el admin esta logueado en la web de coopsol.
     When hago click en la pestaña 'Configuración'

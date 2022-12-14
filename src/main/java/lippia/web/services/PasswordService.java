@@ -23,6 +23,6 @@ public class PasswordService extends ActionManager {
 
     public static void verifyMessage(String message) {
         waitVisibility(String.format(PasswwordConstants.CHANGE_PASSWORD_MESSAGE, message));
-        Assert.assertTrue(isVisible(String.format(PasswwordConstants.CHANGE_PASSWORD_MESSAGE, message)), "No se encontro el mensaje");
+        Assert.assertTrue(isVisible(String.format(PasswwordConstants.CHANGE_PASSWORD_MESSAGE, message)), String.format("No se encontro el mensaje: %s", message));
     }
 }
