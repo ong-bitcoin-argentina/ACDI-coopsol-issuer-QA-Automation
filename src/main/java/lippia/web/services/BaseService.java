@@ -28,15 +28,23 @@ public class BaseService extends ActionManager {
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Cerrar sesión");
                 break;
             case "Actividades":
-                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Actividades");
-                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Actividades");
+                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Actividades");
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Actividades");
                 break;
             case "Tipos de credenciales":
                 click(TemplatesConstants.MENU_ITEM);
                 break;
             case "Productores":
-                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Productores");
-                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Productores");
+                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Productores");
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Productores");
+                break;
+            case "Configuración":
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Configuración");
+                break;
+            case "Actualizar contraseña":
+                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Actualizar contraseña");
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Actualizar contraseña");
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Actualizar contraseña");
                 break;
 
         }
