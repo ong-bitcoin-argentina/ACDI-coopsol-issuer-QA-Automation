@@ -3,16 +3,17 @@ package lippia.web.services;
 import com.crowdar.core.LocatorManager;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.driver.DriverManager;
-import lippia.web.constants.LoginConstants;
-import lippia.web.constants.ProducerConstants;
-import lippia.web.constants.TemplatesConstants;
-import lippia.web.constants.ValidacionDeIdentidadConstants;
+import lippia.web.constants.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class BaseService extends ActionManager {
+
+    public static final ThreadLocal<String> RANDOM_NAME = new ThreadLocal<String>();
+
     public static void clickButton(String button) {
         switch (button) {
             case "login":
@@ -28,18 +29,31 @@ public class BaseService extends ActionManager {
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Cerrar sesión");
                 break;
             case "Actividades":
-                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Actividades");
-                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Actividades");
+                clickGenericButton("Actividades");
                 break;
             case "Tipos de credenciales":
                 click(TemplatesConstants.MENU_ITEM);
                 break;
             case "Productores":
-                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Productores");
-                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Productores");
+                clickGenericButton("Productores");
+                break;
+            case "Usuarios":
+                clickGenericButton("Usuarios");
+                break;
+            case "+ Nuevo Usuario":
+                click(UsuariosConstants.NEW_USER_BUTTON);
+                break;
+            case "Guardar":
+                waitVisibility(UsuariosConstants.GUARDAR_BUTTON);
+                click(UsuariosConstants.GUARDAR_BUTTON);
                 break;
 
         }
+    }
+
+    public static void clickGenericButton(String button){
+        waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON, button);
+        click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, button);
     }
 
     public static void waitLocatedElement(String locatorElement, int time, String... locatorReplacementValue) {
