@@ -57,7 +57,7 @@ Feature: Usuarios
       |          |          | Admin |
 
 
-   #MM-825 #Revisar
+@Ignore #MM-825 #Revisar
   Scenario Outline: Utilizacion del paginador <posicion> exitosamente
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Usuarios"
