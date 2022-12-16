@@ -11,11 +11,11 @@ Feature: Credenciales - Filtros
     When el admin selecciona "Credenciales"
     When el admin selecciona "Credenciales en uso"
     When el admin completa el filtro "Tipo:" <Tipo>, "Nombre:" <Nombre>, "Apellido:" <Apellido>, "Desde:" <Desde>, "Hasta:" <Hasta>
-#    Then se muestran los resultados de acuerdo al criterio de busqueda
+    Then se muestran los resultados de acuerdo al criterio de busqueda
 
     Examples:
-      | Tipo           | Nombre   | Apellido | Desde      | Hasta      |
-      | Financiera RSK | Emiliano | Palacio  | 26/07/2022 | 29/07/2022 |
+      | Tipo           | Nombre | Apellido | Desde      | Hasta      |
+      | Productiva RSK | David  | Morelos  | 08/08/2022 | 08/08/2022 |
      # |              | Emiliano | Palacio  | 26/07/2022 | 29/07/2022 |
      # |              |          | Palacio  | 26/07/2022 | 29/07/2022 |
      # |              |          |          | 26/07/2022 | 29/07/2022 |

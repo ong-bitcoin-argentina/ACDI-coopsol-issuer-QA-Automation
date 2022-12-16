@@ -53,7 +53,6 @@ public class BaseService extends ActionManager {
                 waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Credenciales en uso");
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Credenciales en uso");
 
-
         }
     }
 
