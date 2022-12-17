@@ -16,12 +16,17 @@ Feature: Credenciales - Filtros
     Examples:
       | Tipo           | Nombre | Apellido | Desde      | Hasta      |
       | Productiva RSK | David  | Morelos  | 08/08/2022 | 08/08/2022 |
-     # |              | Emiliano | Palacio  | 26/07/2022 | 29/07/2022 |
-     # |              |          | Palacio  | 26/07/2022 | 29/07/2022 |
-     # |              |          |          | 26/07/2022 | 29/07/2022 |
-     # |              |          |          |            | 29/07/2022 |
-     # |              | Emiliano | Palacio  | 26/07/2022 | 29/07/2022 |
-     # | Crowdar-Test | Emiliano |          | 26/07/2022 |            |
-     # | Crowdar-Test |          | Palacio  |            | 29/07/2022 |
+      |                | David  | Morelos  | 08/08/2022 | 08/08/2022 |
+      |                |        | Morelos  | 08/08/2022 | 08/08/2022 |
+      |                |        |          | 08/08/2022 | 08/08/2022 |
+      |                |        |          |            | 08/08/2022 |
+      | Productiva RSK | David  | Morelos  |            |            |
+      | Productiva RSK | David  |          |            |            |
+      | Productiva RSK |        |          |            |            |
+      |                | David  |          |            |            |
+      |                |        | Morelos  |            |            |
+      |                |        |          | 08/08/2022 |            |
+      | Productiva RSK | David  |          | 08/08/2022 |            |
+      | Productiva RSK |        | Morelos  |            | 08/08/2022 |
 
 
