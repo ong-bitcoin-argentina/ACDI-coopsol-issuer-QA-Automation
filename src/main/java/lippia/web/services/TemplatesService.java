@@ -11,7 +11,6 @@ import java.math.BigInteger;
 import java.util.Random;
 
 
-
 public class TemplatesService extends ActionManager {
 
     public static void goToTemplates(){
@@ -24,8 +23,7 @@ public class TemplatesService extends ActionManager {
     }
 
     public static void fillNameandEmisor(String name,String emisor) {
-        BigInteger b = new BigInteger(256, new Random());
-        setInput(TemplatesConstants.INPUT_NAME, name+b);
+        setInput(TemplatesConstants.INPUT_NAME, getRandom(name));
         click(TemplatesConstants.INPUT_EMISOR);
         for (int i = 1; ; i++) {
             if (getElement(TemplatesConstants.EMISOR_OPTION, String.valueOf(i)).getAttribute("title").equals(emisor)) {
@@ -37,6 +35,10 @@ public class TemplatesService extends ActionManager {
 
         }
         click(TemplatesConstants.ACCEPT_BUTTON);
+    }
+
+    public static String getRandom(String name){
+        return name.concat(String.valueOf(new BigInteger(256,new Random())));
     }
 
     public static void successMessage(String message){

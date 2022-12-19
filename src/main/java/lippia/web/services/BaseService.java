@@ -46,6 +46,12 @@ public class BaseService extends ActionManager {
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Actualizar contraseña");
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Actualizar contraseña");
                 break;
+            case "Credenciales":
+                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Credenciales");
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Credenciales");
+            case "Credenciales en uso":
+                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Credenciales en uso");
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Credenciales en uso");
 
         }
     }
