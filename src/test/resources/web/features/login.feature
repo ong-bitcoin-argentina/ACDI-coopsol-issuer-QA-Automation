@@ -31,6 +31,5 @@ Feature: Login
 
   @smoke  #MM-828
   Scenario: Log out exitoso
-    Given que el admin esta logueado en la web de coopsol.
     When el usuario selecciona "Cerrar sesión"
     Then se redirije a pantalla del Log in
