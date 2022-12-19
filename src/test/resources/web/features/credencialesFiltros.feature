@@ -5,7 +5,6 @@ Feature: Credenciales - Filtros
   REVOCARLAS segun FILTRO aplicado
 
   #MM-815
-  @Giuliana
   Scenario Outline: Filtros de busqueda Exitoso
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Credenciales"

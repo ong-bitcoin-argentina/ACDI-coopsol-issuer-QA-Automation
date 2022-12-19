@@ -3,17 +3,17 @@ package lippia.web.services;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.driver.DriverManager;
 import lippia.web.constants.CredencialesConstants;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
+
 
 public class CredencialesService extends ActionManager {
 
@@ -60,62 +60,52 @@ public class CredencialesService extends ActionManager {
     }
 
     public static void checkResults() throws ParseException {
-        String nombreApellido = firstname.get() + " " + lastname.get();
-        Date desde = new SimpleDateFormat("dd/MM/yyyy").parse(from.get());
-        Date hasta = new SimpleDateFormat("dd/MM/yyyy").parse(todate.get());
+        List<String> list = new ArrayList<>();
+        List<String> check = new ArrayList<>();
         for (int i = 2; ; i++) {
             String crea = getText(CredencialesConstants.CHECK_DESDE, String.valueOf(i)).substring(0, 10);
             String emi = getText(CredencialesConstants.CHECK_HASTA, String.valueOf(i)).substring(0, 10);
             Date creacion = new SimpleDateFormat("dd/MM/yyyy").parse(crea);
             Date emision = new SimpleDateFormat("dd/MM/yyyy").parse(emi);
-            if ((!Objects.equals(tipo.get(), "")) && (!Objects.equals(firstname.get(), "")) &&
-                    (!Objects.equals(lastname.get(), "")) && (!Objects.equals(from.get(), "")) &&
-                    (!Objects.equals(todate.get(), ""))) {
-                if (getText(CredencialesConstants.CHECK_NOMBRE, String.valueOf(i)).equals(nombreApellido) &&
-                        getText(CredencialesConstants.CHECK_TIPO, String.valueOf(i)).equals(tipo.get()) &&
-                        ((creacion.after(desde) || creacion.equals(desde)) && (creacion.before(hasta) || creacion.equals(hasta))) &&
-                        ((emision.after(desde) || emision.equals(desde)) && (emision.before(hasta) || emision.equals(hasta)))) {
-                    break;
-                }
-                else if((!Objects.equals(firstname.get(), "")) &&
-                        (!Objects.equals(lastname.get(), "")) && (!Objects.equals(from.get(), "")) &&
-                        (!Objects.equals(todate.get(), ""))){
-                    if (getText(CredencialesConstants.CHECK_NOMBRE, String.valueOf(i)).equals(nombreApellido) &&
-                            ((creacion.after(desde) || creacion.equals(desde)) && (creacion.before(hasta) || creacion.equals(hasta))) &&
-                            ((emision.after(desde) || emision.equals(desde)) && (emision.before(hasta) || emision.equals(hasta)))) {
-                        break;
+            list.add(tipo.get());
+            list.add(firstname.get());
+            list.add(lastname.get());
+            list.add(from.get());
+            list.add(todate.get());
+            list.removeIf(cadena -> Objects.equals(cadena, null));
+            for (String cadena : list) {
+                if (cadena.equals(tipo.get()) & getText(CredencialesConstants.CHECK_TIPO, String.valueOf(i)).equals(tipo.get())) {
+                    check.add("check");
+                } else if (cadena.equals(firstname.get()) & getText(CredencialesConstants.CHECK_NOMBRE, String.valueOf(i)).contains(firstname.get())) {
+                    check.add("check");
+                } else if (cadena.equals(lastname.get()) & getText(CredencialesConstants.CHECK_NOMBRE, String.valueOf(i)).contains(lastname.get())) {
+                    check.add("check");
+                } else if (cadena.equals(from.get())) {
+                    Date desde = new SimpleDateFormat("dd/MM/yyyy").parse(from.get());
+                    if ((creacion.after(desde) || creacion.equals(desde)) && (emision.after(desde) || emision.equals(desde))) {
+                        check.add("check");
+                    }
+                } else if (cadena.equals(todate.get())) {
+                    Date hasta = new SimpleDateFormat("dd/MM/yyyy").parse(todate.get());
+                    if ((creacion.before(hasta) || creacion.equals(hasta)) && (emision.before(hasta) || emision.equals(hasta))) {
+                        check.add("check");
                     }
                 }
-                else if((!Objects.equals(lastname.get(), "")) && (!Objects.equals(from.get(), "")) &&
-                        (!Objects.equals(todate.get(), ""))){
-                    if (getText(CredencialesConstants.CHECK_NOMBRE, String.valueOf(i)).contains(lastname.get()) &&
-                            ((creacion.after(desde) || creacion.equals(desde)) && (creacion.before(hasta) || creacion.equals(hasta))) &&
-                            ((emision.after(desde) || emision.equals(desde)) && (emision.before(hasta) || emision.equals(hasta)))) {
-                        break;
-                    }
-                }
-                else if((!Objects.equals(from.get(), "")) && (!Objects.equals(todate.get(), ""))){
-                    if (((creacion.after(desde) || creacion.equals(desde)) && (creacion.before(hasta) || creacion.equals(hasta))) &&
-                            ((emision.after(desde) || emision.equals(desde)) && (emision.before(hasta) || emision.equals(hasta)))) {
-                        break;
-                    }
-                }
-                else if(!Objects.equals(todate.get(), "")){
-                    if ((creacion.before(hasta) || creacion.equals(hasta)) &&
-                            (emision.before(hasta) || emision.equals(hasta))) {
-                        break;
-                    }
-                }
-                else if(Objects.equals(from.get(),"") && Objects.equals(todate.get(), "")){
-                    if (getText(CredencialesConstants.CHECK_NOMBRE, String.valueOf(i)).equals(nombreApellido) &&
-                            getText(CredencialesConstants.CHECK_TIPO, String.valueOf(i)).equals(tipo.get()) ) {
-                        break;
-                    }
-                }
+
             }
+            if (Objects.equals(check.size(), list.size()) && check.stream().allMatch(val -> val.equals("check"))) {
+                break;
+            } else {
+                check.clear();
+            }
+
         }
+
+
     }
+
 }
+
 
 
 
