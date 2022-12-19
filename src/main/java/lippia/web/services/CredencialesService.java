@@ -72,7 +72,7 @@ public class CredencialesService extends ActionManager {
             list.add(lastname.get());
             list.add(from.get());
             list.add(todate.get());
-            list.removeIf(cadena -> Objects.equals(cadena, null));
+            list.removeIf(cadena -> Objects.equals(cadena, null) || Objects.equals(cadena, "") );
             for (String cadena : list) {
                 if (cadena.equals(tipo.get()) & getText(CredencialesConstants.CHECK_TIPO, String.valueOf(i)).equals(tipo.get())) {
                     check.add("check");
