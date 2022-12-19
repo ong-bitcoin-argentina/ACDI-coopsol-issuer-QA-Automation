@@ -17,7 +17,7 @@ Feature: Credenciales - Filtros
       | Crowdar-Test | Emiliano | Palacio  | 26/07/2022 | 29/07/2022 |
      # |              | Emiliano | Palacio  | 26/07/2022 | 29/07/2022 |
      # |              |          | Palacio  | 26/07/2022 | 29/07/2022 |
-     # |              |          |          | 26/07/2022 | 29/07/2022 |
+      |              |          |          | 26/07/2022 | 29/07/2022 |
      # |              |          |          |            | 29/07/2022 |
      # |              | Emiliano | Palacio  | 26/07/2022 | 29/07/2022 |
      # | Crowdar-Test | Emiliano |          | 26/07/2022 |            |
