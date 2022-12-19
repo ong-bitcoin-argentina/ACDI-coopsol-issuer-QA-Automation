@@ -13,8 +13,8 @@ public class UsuariosSteps extends PageSteps {
         UsuariosService.completeForm(name, pass, role);
     }
 
-    @Then("^el usuario se crea exitosamente con \"Nombre:\" (.*) y \"Roles:\" (.*)$")
-    public void elUsuarioSeCreaExitosamente(String name, String role) {
-        UsuariosService.verifyNewUser(name, role);
+    @Then("^el usuario se crea exitosamente con \"Roles:\" (.*)$")
+    public void elUsuarioSeCreaExitosamente( String role) {
+        UsuariosService.verifyNewUser(role);
     }
 }

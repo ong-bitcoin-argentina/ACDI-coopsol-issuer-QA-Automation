@@ -12,9 +12,9 @@ Feature: Usuarios
     When el admin selecciona "+ Nuevo Usuario"
     When el admin completa el formulario con "Nombre:" <Nombre>, "Contraseña:" <Pass> y "Roles:" <Rol>
     When Hace click en el boton "Guardar"
-    Then el usuario se crea exitosamente con "Nombre:" <Nombre> y "Roles:" <Rol>
+    Then el usuario se crea exitosamente con "Roles:" <Rol>
 @Nahuel
     Examples:
       | Nombre     | Pass     | Rol   |
       | Emiliano   | !@#!@#   | ADMIN |
-#      | Juan Perez | 23423424 | BASIC |
+      | Juan Perez | 23423424 | BASIC |
