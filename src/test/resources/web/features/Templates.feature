@@ -26,6 +26,14 @@ Feature: Templates
     And el admin hace clic en aceptar
     Then se muestran un mensaje de "Template eliminado exitosamente"
 
+    #MM-832
+  Scenario: Editar un Template
+    Given que el admin esta logueado en la web de coopsol.
+    When el admin selecciona el área "Tipos de credenciales"
+    And el admin selecciona el botón "Editar" al costado derecho del template del primer resultado
+    Then se abre una sección para editar la información del template
+
+
     ##MM-833
   Scenario Outline: Editar una categoria de credencial de un Template
     Given que el admin esta logueado en la web de coopsol.
@@ -44,4 +52,3 @@ Feature: Templates
       | IDENTIDAD  |
       | BENEFICIOS |
       | LABORAL    |
-        
