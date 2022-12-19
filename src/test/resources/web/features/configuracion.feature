@@ -1,4 +1,4 @@
-@BO @regresion @smoke @configuracion
+@BO @regresion @smoke @configuracion @BUG_960
 
 Feature: Como usuario de Coopsol quiero cambiar contraseña desde la web
 
@@ -10,9 +10,13 @@ Feature: Como usuario de Coopsol quiero cambiar contraseña desde la web
     And hago click en el campo Confirmar nueva contraseña y completo con 'Crowdar387!!'
     And hago click en el boton 'Actualizar contraseña'
     Then el sistema muestra un mensaje  'Contraseña actualizada con éxito'
-
     # Revierto el cambio de contraseña
-    And hago click en el campo Nueva contraseña y completo con 'default'
+    When hago click en el campo Nueva contraseña y completo con 'default'
     And hago click en el campo Confirmar nueva contraseña y completo con 'default'
     And hago click en el boton 'Actualizar contraseña'
     Then el sistema muestra un mensaje  'Contraseña actualizada con éxito'
+
+
+  @BUG_960
+  Scenario: Fallido al intentar cambiar pass con valores vacíos
+    Given que el admin esta logueado en la web de coopsol.
