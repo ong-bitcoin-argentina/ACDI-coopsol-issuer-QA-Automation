@@ -1,10 +1,11 @@
-@BO @regresion @smoke @credenciales
+@BO @regresion @smoke @credenciales @BUG_946
 Feature: Credenciales - Filtros
   Como usuario de Coopsol
   quiero acceder a credenciales en uso para poder
   REVOCARLAS segun FILTRO aplicado
 
-  #MM-815
+  @BUG_946
+    #MM-815
   Scenario Outline: Filtros de busqueda Exitoso
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Credenciales"
