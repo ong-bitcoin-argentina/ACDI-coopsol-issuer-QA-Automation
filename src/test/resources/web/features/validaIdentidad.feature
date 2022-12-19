@@ -42,9 +42,9 @@ Feature: Validar identidad
   #MM-907
   Scenario: Vizualizar Solicitudes Aprobadas exitosamente.
     Given que el admin esta logueado en la web de coopsol.
-    And el admin se encuentra en "Validacion de Identidades"
+    And el admin se encuentra en "Validación de identidades"
     When el admin selecciona "Solicitudes Aprobadas"
-    Then se visualilza el tab "Solicitudes Aprobadas"
+    Then se visualilza el tab Solicitudes Aprobadas
 
 
   #MM-908

@@ -15,7 +15,7 @@ public class PasswordSteps extends PageSteps {
         BaseService.clickButton(button);
     }
 
-    @And("^hago click en el campo Nueva contraseña y completo con '(.*)'$")
+    @When("^hago click en el campo Nueva contraseña y completo con '(.*)'$")
     public void hagoClickEnElCampoNuevaContraseñaYCompletoConCrowdar(String newPass) {
         PasswordService.setNewPassword(newPass);
     }
