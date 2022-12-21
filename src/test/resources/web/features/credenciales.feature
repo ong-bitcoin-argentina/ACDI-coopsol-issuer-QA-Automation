@@ -5,7 +5,7 @@ Feature: Credenciales
   Como usuario de Coopsol
   quiero eliminar una  credencial pendiente
 
-  @Ignore
+  @Ignore #MM-936
   Scenario: Eliminar exitosamente una credencial pendiente
     Given que el admin esta logueado en la web de coopsol.
     When selecciono la primer credencial haciendo click en el checkbox ubicado a la izquierda
