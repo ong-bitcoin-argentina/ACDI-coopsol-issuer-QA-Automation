@@ -5,7 +5,7 @@ Feature: Productores
 
 #MM-844
   @smoke
-  Scenario: Caso exitoso de registro de un nuevo productors
+  Scenario: Caso exitoso de registro de un nuevo productores
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Productores"
     When hago click en el boton "+Nuevo Productor"

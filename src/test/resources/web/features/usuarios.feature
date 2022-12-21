@@ -71,7 +71,7 @@ Feature: Usuarios
       | Anterior  |
 
 
-@Ignore #MM-1126
+@Ignore @BUG_814 #MM-1126
   Scenario: Editar Usuario
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Usuarios"

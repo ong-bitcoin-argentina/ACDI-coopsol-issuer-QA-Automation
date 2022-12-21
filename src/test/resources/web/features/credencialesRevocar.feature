@@ -22,10 +22,10 @@ Feature: Credenciales - Revocar
     #MM-818
   Scenario Outline: [Filtro-Acciones] Revocado de credencial exitoso
     Given que el admin esta logueado en la web de coopsol.
-    And el admin selecciona "Credenciales en uso"
-    When  el admin selecciona "Revocar"
-    When  el admin selecciona <motivo>
-    When el admin confirma la accion
+    When el admin selecciona "Credenciales en uso"
+    When el admin selecciona "Revocar"
+    When el admin selecciona <motivo>
+    When hago click en el boton "Confirmar"
     Then Se muestra mensaje "La credencial se ha revocado exitosamente"
 
     Examples:
