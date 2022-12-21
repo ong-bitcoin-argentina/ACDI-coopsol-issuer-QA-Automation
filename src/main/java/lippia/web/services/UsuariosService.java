@@ -18,7 +18,7 @@ public class UsuariosService extends ActionManager {
         setInput(UsuariosConstants.PASSWORD_INPUT, pass);
     }
 
-    public static void setName(String name){
+    public static void setName(String name) {
         BaseService.RANDOM_NAME.set(TemplatesService.getRandom(name));
         setInput(UsuariosConstants.NAME_INPUT, BaseService.RANDOM_NAME.get());
     }
@@ -41,7 +41,7 @@ public class UsuariosService extends ActionManager {
         softAssert.assertAll();
     }
 
-    public static List<String> getNewUser(String userName){
+    public static List<String> getNewUser(String userName) {
         List<WebElement> newUserDataList = getElements(UsuariosConstants.USER_DATA);
 
         List<String> newUser = new ArrayList<>();
@@ -58,17 +58,22 @@ public class UsuariosService extends ActionManager {
 
     }
 
-    public static void goToLastPage(){
-        BaseService.waitLocatedElement(UsuariosConstants.USER_PAGES,1);
+    public static void goToLastPage() {
+        BaseService.waitLocatedElement(UsuariosConstants.USER_PAGES, 1);
         List<WebElement> userPages = getElements(UsuariosConstants.USER_PAGES);
         WebElement lastPage = userPages.get(userPages.size() - 3);
         click(lastPage);
     }
 
-    public static String todayDate(){
+    public static String todayDate() {
         SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy");
         String formatedDate;
         formatedDate = formater.format(new Date());
         return formatedDate;
+    }
+
+    public static void clickGuardarButton() {
+        waitVisibility(UsuariosConstants.GUARDAR_BUTTON);
+        click(UsuariosConstants.GUARDAR_BUTTON);
     }
 }

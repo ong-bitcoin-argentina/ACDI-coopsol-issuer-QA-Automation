@@ -40,10 +40,10 @@ Feature: Como usuario de Coopsol quiero poder crear una nueva credencial
     When hago click en el boton "Guardar"
     Then el campo DID muesta el mensaje de error  "Requerido"
 
- #MM-840
+  #MM-840
   Scenario: Caso fallido de creación de una nueva credencial por campos requeridos vacios
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Credenciales"
-    When hago click en el boton "+ Crear nueva credencial"
-    When hago click en el boton "Guardar"
-    Then los campos DID, NOMBRE y APELLIDO muestran el mensaje de error "Requerido"
+    When Hace click en el boton "+ Crear nueva credencial"
+    When Hace click en el boton "Guardar"
+    Then los campos 'DID', 'NOMBRE' y 'APELLIDO' muestran el mensaje de error 'Requerido'

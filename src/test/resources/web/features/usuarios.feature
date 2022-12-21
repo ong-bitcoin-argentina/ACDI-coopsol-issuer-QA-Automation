@@ -12,7 +12,7 @@ Feature: Usuarios
     When el admin selecciona "Usuarios"
     When el admin selecciona "+ Nuevo Usuario"
     When el admin completa el formulario con "Nombre:" <Nombre>, "Contraseña:" <Pass> y "Roles:" <Rol>
-    When Hace click en el boton "Guardar"
+    When Hago click en el boton "Guardar"
     Then el usuario se crea exitosamente con "Roles:" <Rol>
 
     Examples:
