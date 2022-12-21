@@ -11,7 +11,6 @@ import java.math.BigInteger;
 import java.util.Random;
 
 
-
 public class TemplatesService extends ActionManager {
 
     public static void goToTemplates(){
