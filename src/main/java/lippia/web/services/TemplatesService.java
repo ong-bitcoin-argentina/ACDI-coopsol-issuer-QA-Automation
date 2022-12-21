@@ -38,7 +38,7 @@ public class TemplatesService extends ActionManager {
     }
 
     public static String getRandom(String name){
-        return name.concat(String.valueOf(new BigInteger(256,new Random())));
+        return name.concat(String.valueOf(new BigInteger(256, new Random())));
     }
 
     public static void successMessage(String message){
