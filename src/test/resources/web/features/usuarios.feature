@@ -1,4 +1,4 @@
-@BO @regresion @usuario @BUG_954 @BUG_847
+@BO @regresion @usuario @BUG_954 @BUG_847 @BUG_814
 Feature: Usuarios
 
   Como usuario de Coopsol quiero acceder a "Usuarios"
@@ -69,3 +69,13 @@ Feature: Usuarios
       | posicion  |
       | Siguiente |
       | Anterior  |
+
+
+@Ignore #MM-1126
+  Scenario: Editar Usuario
+    Given que el admin esta logueado en la web de coopsol.
+    When el admin selecciona "Usuarios"
+    When hago click en el boton "Editar"
+    When edito los campos del formulario
+    When hago click en el boton "Guardar"
+    Then el sistema muestra un mensaje  'Usuario editado exitosamente'

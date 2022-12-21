@@ -109,3 +109,13 @@ Feature: Templates Tipos de Credenciales
       | Ivana       | Number      |
       | Emiliano    | Boolean     |
       | Ejemplo     | Checkbox    |
+
+
+ @Ignore #MM-1127
+ Scenario: Editar template con valores vacíos fallido
+   Given que el admin esta logueado en la web de coopsol.
+   When el admin selecciona "Tipo de Credenciales"
+   When hago click en el boton “Editar"
+   When dejo vacio los campos tildados como "Requeridos"
+   When hago click en el boton "Guardar"
+   Then el sistema no permite realizar los cambios
