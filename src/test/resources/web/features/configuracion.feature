@@ -36,14 +36,9 @@ Feature: Como usuario de Coopsol quiero cambiar contraseña desde la web
 
 #MM-924
   #en realidad es no cpinciden las contraseñas  - CORREGIR
-  Scenario: Caso fallido cambiar contraseña con campo “CONFIRMAR NUEVA CONTRASEÑA” vacio
-
-    Given estoy logueado en la web de coopsol con el usuario "crowdar" y password "Crowdar387!"
-    When hago clck en la pestaña "Configuracion"
-    And hago click en el campo “Contraseña anterior" y completo con campos validos
-    And hago click en el campo “Nueva contraseña" y completo con campos validos
-    And hago click en el campo “Confirmar nueva contraseña" y dejo campo vacio
-
-    And hago click en el boton “Actualizar contraseña”
-
+  Scenario: Caso fallido cambiar contraseña contaseñas no coinciden
+    Given que el admin esta logueado en la web de coopsol.
+    When hago click en la pestaña 'Configuración'
+    And hago click en el campo Nueva contraseña y completo con 'Crowdar000!'
+    And hago click en el campo Confirmar nueva contraseña y completo con 'Crowdar!!'
     Then el sistema muestra un mensaje “Las contraseñas no coinciden”
