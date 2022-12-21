@@ -9,12 +9,12 @@ Feature: Como usuario de Coopsol quiero cambiar contraseña desde la web
     And hago click en el campo Nueva contraseña y completo con 'Crowdar387!!'
     And hago click en el campo Confirmar nueva contraseña y completo con 'Crowdar387!!'
     And hago click en el boton 'Actualizar contraseña'
-    Then el sistema muestra un mensaje  'Contraseña actualizada con éxito'
+    Then el sistema muestra un mensaje 'Contraseña actualizada con éxito'
     # Revierto el cambio de contraseña
     When hago click en el campo Nueva contraseña y completo con 'default'
     And hago click en el campo Confirmar nueva contraseña y completo con 'default'
     And hago click en el boton 'Actualizar contraseña'
-    Then el sistema muestra un mensaje  'Contraseña actualizada con éxito'
+    Then el sistema muestra un mensaje 'Contraseña actualizada con éxito'
 
 
   @BUG_960
@@ -34,11 +34,10 @@ Feature: Como usuario de Coopsol quiero cambiar contraseña desde la web
     Then el sistema muestra un mensaje “Las contraseña debe tener 6 caracteres como mínimo”
 
 
-#MM-924
-  #en realidad es no cpinciden las contraseñas  - CORREGIR
-  Scenario: Caso fallido cambiar contraseña contaseñas no coinciden
+  #MM-924
+  Scenario: Caso fallido cambiar contraseña - contaseñas no coinciden
     Given que el admin esta logueado en la web de coopsol.
     When hago click en la pestaña 'Configuración'
     And hago click en el campo Nueva contraseña y completo con 'Crowdar000!'
     And hago click en el campo Confirmar nueva contraseña y completo con 'Crowdar!!'
-    Then el sistema muestra un mensaje “Las contraseñas no coinciden”
+    Then el sistema muestra un mensaje 'Las contraseñas no coinciden'
