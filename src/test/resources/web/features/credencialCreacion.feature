@@ -8,7 +8,7 @@ Feature: Como usuario de Coopsol quiero poder crear una nueva credencial
     When el admin selecciona "Credenciales"
     When hago click en el boton "+ Crear nueva credencial"
     And relleno los campos con informacion valida
-    And hago clikc en el boton "Guardar"
+    When hago click en el boton "Guardar"
     Then se genera una nueva credencial y se logra visualizar en la lista de credenciales pendientes
 
 #MM-842
@@ -17,7 +17,7 @@ Feature: Como usuario de Coopsol quiero poder crear una nueva credencial
     When el admin selecciona "Credenciales"
     When hago click en el boton "+ Crear nueva credencial"
     And relleno los campos requeridos de "DID", "APELLIDO", “ACTIVIDAD PRINCIPAL” con informacion valida
-    And hago click en el boton Guardar
+    When hago click en el boton "Guardar"
     Then el campo NOMBRE  muesta el mensaje de error  "Requerido"
 
 
@@ -27,7 +27,7 @@ Feature: Como usuario de Coopsol quiero poder crear una nueva credencial
     When el admin selecciona "Credenciales"
     When hago click en el boton "+ Crear nueva credencial"
     And relleno los campos requeridos de "DID", "NOMBRE"
-    And hago click en el boton Guardar
+    When hago click en el boton "Guardar"
     Then el campo APELLIDO muesta el mensaje de error  "Requerido"
 
     #MM-841
@@ -37,7 +37,7 @@ Feature: Como usuario de Coopsol quiero poder crear una nueva credencial
     When hago click en el boton "+ Crear nueva credencial"
     And hago cilck en el boton "Crear nueva credencial"
     And relleno los campos requeridos de "NOMBRE", "APELLIDO", “ACTIVIDAD PRINCIPAL”
-    And hago click en el boton Guardar
+    When hago click en el boton "Guardar"
     Then el campo DID muesta el mensaje de error  "Requerido"
 
  #MM-840
