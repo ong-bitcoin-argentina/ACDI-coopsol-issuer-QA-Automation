@@ -1,5 +1,7 @@
 package lippia.web.constants;
 
+import org.openqa.selenium.WebElement;
+
 public class CredencialesConstants {
 
     public static final String HIDE="xpath://*[@id=\"root\"]/div/div/div/div/div/div[1]/div[1]";
@@ -24,6 +26,7 @@ public class CredencialesConstants {
 
     public static final String CHECK_HASTA="xpath://*[@id='rc-tabs-0-panel-1']/div/div[2]/div/div/div/div/div/table/tbody/tr[%s]/td[6]";
 
-
-
+    public static final String GUARDAR_BUTTON = "xpath://*[contains(text(),'Guardar')]";
+    public static final String INPUT_MESSAGE = "xpath://*[text()='%s']/*[text()='%s']";
+    public static final String NUEVA_CREDENCIAL_BUTTON = "xpath://*[text()=\"+ Crear nueva credencial\"]";
 }
