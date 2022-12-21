@@ -53,3 +53,59 @@ Feature: Templates Tipos de Credenciales
       | IDENTIDAD  |
       | BENEFICIOS |
       | LABORAL    |
+
+
+        ##MM-835
+  Scenario Outline: Editar datos del participante de una credencial de un Template
+    Given el admin esta logueado en la web de coopsol
+    When el admin selecciona el área "Tipos de credenciales"
+    And el admin selecciona el boton "Editar" al costado derecho del template
+    And el admin se dirige a la sección de "Datos del participante"
+    And edita el campo DID <DID>, Nombre <NOMBRE>, Apellido <APELLIDO> y Expiracion date <EXPIRACION DATE>
+    And el admin da click en "Guardar"
+    Then se muestra un mensaje de "Template actualizado exitosamente"
+
+    Examples:
+      | DID                  |  NOMBRE     | APELLIDO   |  EXPIRACION DATE   |
+      | 12316464114164       | Jesus       | Vasquez    |  01/07/2022        |
+
+
+      ##MM-835
+    Scenario Outline: Editar datos de una credencial de un Template
+    Given el admin esta logueado en la web de coopsol
+    When el admin selecciona el area "Tipos de credenciales"
+    And el admin selecciona el boton "Editar" al costado derecho del template
+    And el admin se dirigue a la seccion de "Datos de la credencial"
+    And edita el campo "CREDENCIAL" ingresando un dato <Datos>
+    And el admin da click en "Guardar"
+    Then se muestra un mensaje de "Template actualizado exitosamente"
+
+    Examples:
+      | Datos                |
+      | Identitaria coopsol  |
+      | loco                 |
+      | asddadada            |
+      | 12456325             |
+      |                      |
+      | %#$&%&#&#            |
+
+
+       ##MM-836
+  Scenario Outline: Crear un nuevo campo para editar en un Template
+    Given el admin esta logueado en la web de coopsol
+    When el admin selecciona el area "Tipos de credenciales"
+    And el admin selecciona el boton "Editar" al costado derecho del template
+    And el admin se dirigue a la seccion de "Datos de la credencial"
+    And da click en el boton "Nuevo Campo"
+    And completa los campos Nombre <NOMBRE> y Tipo <TIPO>
+    And el admin da click en "Crear"
+    Then se crea un nuevo campo para editar un template
+
+    Examples:
+      | NOMBRE      | TIPO        |
+      | Jesus       | Text        |
+      | dadaaddd    | Paragraph   |
+      | 12345       | Date        |
+      | Ivana       | Number      |
+      | Emiliano    | Boolean     |
+      | Ejemplo     | Checkbox    |
