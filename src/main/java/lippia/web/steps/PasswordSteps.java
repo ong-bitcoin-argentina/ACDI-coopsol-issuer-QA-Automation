@@ -30,9 +30,8 @@ public class PasswordSteps extends PageSteps {
         BaseService.clickButton(button);
     }
 
-    @Then("^el sistema muestra un mensaje  '(.*)'$")
+    @Then("^el sistema muestra un mensaje '(.*)'$")
     public void elSistemaMuestraUnMensaje(String message) {
         PasswordService.verifyMessage(message);
     }
-
 }

@@ -43,6 +43,11 @@ public class CredencialesSteps extends PageSteps {
     public void checkRequerido(){
         CredencialesService.checkMessage();
     }
+    ;
 
+    @Then("^los campos '(.*)', '(.*)' y '(.*)' muestran el mensaje de error '(.*)'$")
+    public void losCamposYMuestranElMensajeDeError(String didInput, String nombreInput, String apellidoInput, String message) {
+       CredencialesService.verifyMessage(didInput, nombreInput, apellidoInput, message);
+    }
 }
 

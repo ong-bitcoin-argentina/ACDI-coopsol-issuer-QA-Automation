@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -170,10 +171,16 @@ public class CredencialesService extends ActionManager {
 
     }
 
+
+    public static void clickGuardar() {
+        click(CredencialesConstants.GUARDAR_BUTTON);
+    }
+
+    public static void verifyMessage(String didInput, String nombreInput, String apellidoInput, String message) {
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(isVisible(CredencialesConstants.INPUT_MESSAGE, didInput, message), String.format("No se encontro el mensaje: %s", message));
+        softAssert.assertTrue(isVisible(CredencialesConstants.INPUT_MESSAGE, nombreInput, message), String.format("No se encontro el mensaje: %s", message));
+        softAssert.assertTrue(isVisible(CredencialesConstants.INPUT_MESSAGE, apellidoInput, message), String.format("No se encontro el mensaje: %s", message));
+        softAssert.assertAll();
+    }
 }
-
-
-
-
-
-

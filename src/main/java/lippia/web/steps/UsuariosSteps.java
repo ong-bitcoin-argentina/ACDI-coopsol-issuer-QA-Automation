@@ -17,4 +17,9 @@ public class UsuariosSteps extends PageSteps {
     public void elUsuarioSeCreaExitosamente( String role) {
         UsuariosService.verifyNewUser(role);
     }
+
+    @When("Hago click en el boton \"Guardar\"")
+    public void hagoClickEnElBoton() {
+        UsuariosService.clickGuardarButton();
+    }
 }

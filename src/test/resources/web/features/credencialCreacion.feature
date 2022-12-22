@@ -4,10 +4,11 @@ Feature: Como usuario de Coopsol quiero poder crear una nueva credencial
 
 #MM-826
   Scenario: Caso exitoso de creacion de una nueva credencial
-    Given estoy logueado en la web de coopsol con el usuario "crowdar" y password "Crowdar387!"
-    When hago clck en el boton "Crear nueva credencial"
+    Given que el admin esta logueado en la web de coopsol.
+    When el admin selecciona "Credenciales"
+    When hago click en el boton "+ Crear nueva credencial"
     And relleno los campos con informacion valida
-    And hago clikc en el boton "Guardar"
+    When hago click en el boton "Guardar"
     Then se genera una nueva credencial y se logra visualizar en la lista de credenciales pendientes
 
 #MM-842  #MM-843 #MM-841 #MM-840
@@ -23,5 +24,3 @@ Feature: Como usuario de Coopsol quiero poder crear una nueva credencial
       | did:ethr:0x843bc178821fgc4e62c3b262a97d39fh3b9b6658 | Giuliana |            | Productiva RSK      |
       |                                                     | Giuliana | Castellini | Productiva RSK      |
       |                                                     |          |            | Productiva RSK      |
-
-

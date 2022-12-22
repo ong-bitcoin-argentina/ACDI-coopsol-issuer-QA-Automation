@@ -44,8 +44,7 @@ public class BaseService extends ActionManager {
                 click(UsuariosConstants.NEW_USER_BUTTON);
                 break;
             case "Guardar":
-                waitVisibility(UsuariosConstants.GUARDAR_BUTTON);
-                click(UsuariosConstants.GUARDAR_BUTTON);
+                clickGenericButton("Guardar");
                 break;
             case "Configuración":
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Configuración");
@@ -56,11 +55,15 @@ public class BaseService extends ActionManager {
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Actualizar contraseña");
                 break;
             case "Credenciales":
-                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Credenciales");
-                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Credenciales");
+                clickGenericButton("Credenciales");
+                break;
             case "Credenciales en uso":
                 waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Credenciales en uso");
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Credenciales en uso");
+                break;
+            case "+ Crear nueva credencial":
+                click(CredencialesConstants.NUEVA_CREDENCIAL_BUTTON);
+                break;
 
         }
     }
