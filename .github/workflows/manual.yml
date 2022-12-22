@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     container: crowdar/lippia:3.1.2.2
     env: 
-      TAG: "@smoke"
+      TAG: "@login"
       #LANG: "@EN"
       BROWSERTYPE: "chromeHeadless"
     
