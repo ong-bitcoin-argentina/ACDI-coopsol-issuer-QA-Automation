@@ -7,7 +7,7 @@ Feature: Login
   Background:
     Given El usuario se encuentra en Coopsol Issuer
 
-  @smoke #MM-827
+  @smoke @MM-827 #MM-827
   Scenario: Login exitoso
     When El usuario completa Usuario con user
     When El usuario completa Contraseña con password
