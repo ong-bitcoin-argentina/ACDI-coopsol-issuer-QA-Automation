@@ -34,13 +34,9 @@ public class CredencialesConstants {
 
     public static final String ADD_CRED_MENU="xpath://*[contains(@class,'ant-select-dropdown')]";
 
-    public static final String ADD_CRED_BUTTON="xpath://*[@id='root']/div/div/div/div/div/div[2]/div/div[1]/div/div/div/button";
-
-    public static final String SAVE_BUTTON="xpath://*[contains(@class,'ant-btn-submit')]";
-
     public static final String ERROR_MESSAGE="xpath://form/div[%s]/span[contains(@class,'ant-typography-danger')]";
 
-    public static final String GUARDAR_BUTTON = "xpath://*[contains(text(),'Guardar')]";
+    public static final String SAVE_BUTTON="xpath://*[contains(@class,'ant-btn-submit')]";
 
     public static final String INPUT_MESSAGE = "xpath://*[text()='%s']/*[text()='%s']";
     public static final String NUEVA_CREDENCIAL_BUTTON = "xpath://*[text()=\"+ Crear nueva credencial\"]";

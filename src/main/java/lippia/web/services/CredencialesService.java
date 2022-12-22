@@ -116,8 +116,8 @@ public class CredencialesService extends ActionManager {
     public static void clickNuevaCredencial(){
         WebDriver driver = DriverManager.getDriverInstance();
         Actions actions = new Actions(driver);
-        waitVisibility(CredencialesConstants.ADD_CRED_BUTTON);
-        actions.moveToElement(getElement(CredencialesConstants.ADD_CRED_BUTTON)).click().perform();
+        waitVisibility(CredencialesConstants.NUEVA_CREDENCIAL_BUTTON);
+        actions.moveToElement(getElement(CredencialesConstants.NUEVA_CREDENCIAL_BUTTON)).click().perform();
     }
 
     public static void selectTipoCred(String actividad){
@@ -171,10 +171,6 @@ public class CredencialesService extends ActionManager {
 
     }
 
-
-    public static void clickGuardar() {
-        click(CredencialesConstants.GUARDAR_BUTTON);
-    }
 
     public static void verifyMessage(String didInput, String nombreInput, String apellidoInput, String message) {
         SoftAssert softAssert = new SoftAssert();

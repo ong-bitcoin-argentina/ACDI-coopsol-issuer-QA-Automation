@@ -6,13 +6,13 @@ Feature: Como usuario de Coopsol quiero poder crear una nueva credencial
   Scenario: Caso exitoso de creacion de una nueva credencial
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Credenciales"
-    When hago click en el boton "+ Crear nueva credencial"
+    When el admin hace click en  "+ Crear nueva credencial"
     And relleno los campos con informacion valida
     When hago click en el boton "Guardar"
     Then se genera una nueva credencial y se logra visualizar en la lista de credenciales pendientes
 
 #MM-842  #MM-843 #MM-841 #MM-840
-  Scenario Outline: Caso fallido de creación de una nueva credencial por campo NOMBRE vacio
+  Scenario Outline: Caso fallido de creación de una nueva credencial por campo vacio
     Given que el admin esta logueado en la web de coopsol.
     When el admin hace click en  "+ Crear nueva credencial"
     And relleno los campos requeridos de <DID>,<NOMBRE>,<APELLIDO>,<ACTIVIDAD PRINCIPAL> con informacion valida
