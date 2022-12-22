@@ -21,7 +21,7 @@ jobs:
                 "TESTTYPE= "$TESTTYPE,
                 "BROWSERTYPE= "$BROWSERTYPE
     - name: Realizando Pruebas
-      run: mvn clean test -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
+      run: mvn clean test -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG" && ls -a
     - name: Subiendo informe
       uses: actions/download-artifact@v3.0.1
       with:
