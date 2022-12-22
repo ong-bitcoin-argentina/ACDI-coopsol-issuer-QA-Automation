@@ -5,7 +5,9 @@ import com.crowdar.driver.DriverManager;
 import lippia.web.constants.CredencialesConstants;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -102,6 +104,52 @@ public class CredencialesService extends ActionManager {
         }
 
 
+    }
+
+    public static void clickNuevaCredencial(){
+        WebDriver driver = DriverManager.getDriverInstance();
+        Actions actions = new Actions(driver);
+        waitVisibility(CredencialesConstants.ADD_CRED_BUTTON);
+        actions.moveToElement(getElement(CredencialesConstants.ADD_CRED_BUTTON)).click().perform();
+    }
+
+    public static void selectTipoCred(String actividad){
+        WebDriver driver = DriverManager.getDriverInstance();
+        Actions actions = new Actions(driver);
+        click(CredencialesConstants.ADD_CRED_TIPO);
+        waitVisibility(CredencialesConstants.ADD_CRED_MENU);
+        for (int i=1;;i++){
+            if (getText(CredencialesConstants.ADD_CRED_TIPO_OPTIONS,String.valueOf(i)).equals(actividad)){
+                actions.moveToElement(getElement(CredencialesConstants.ADD_CRED_TIPO_OPTIONS,String.valueOf(i))).click().perform();
+                break;
+            }
+
+        }
+
+    }
+    public static void fillInformation(String did,String nombre,String apellido,String actividad) {
+         selectTipoCred(actividad);
+         waitVisibility(CredencialesConstants.ADD_CRED_DETL);
+         List<WebElement> list = getElements(CredencialesConstants.ADD_CRED_DETL);
+         for (WebElement element:list){
+             if(element.getAttribute("name").equals("DID") && !did.equals("")){
+                 element.sendKeys(did);
+             }
+             if(element.getAttribute("name").equals("NOMBRE") && !nombre.equals("")){
+                 element.sendKeys(nombre);
+             }
+             if(element.getAttribute("name").equals("APELLIDO") && !apellido.equals("")){
+                 element.sendKeys(apellido);
+             }
+         }
+
+    }
+    public static void saveCred(){
+        click(CredencialesConstants.SAVE_BUTTON);
+    }
+
+    public static void checkMessage(){
+        Assert.assertTrue(getElement(CredencialesConstants.ERROR_MESSAGE).isDisplayed());
     }
 
 }
