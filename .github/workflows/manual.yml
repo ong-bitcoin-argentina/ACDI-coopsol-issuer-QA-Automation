@@ -23,6 +23,6 @@ jobs:
     - name: Realizando Pruebas
       run: mvn clean test -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
     - name: Subiendo informe
-      uses: actions/upload-artifact@v3
+    - uses: montudor/action-zip@v1
       with:
-        path: target/reports/
+        args: zip -qq -r dir.zip *
