@@ -6,7 +6,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lippia.web.services.BaseService;
 import lippia.web.services.ValidacionDeIdentidadService;
-import org.openqa.selenium.WebElement;
 
 public class ValidacionDeIdentidadSteps extends PageSteps {
     @And("^el admin se encuentra en \"(.*)\"$")
@@ -19,8 +18,8 @@ public class ValidacionDeIdentidadSteps extends PageSteps {
         BaseService.clickButton(button);
     }
 
-    @Then("se visualilza el tab Solicitudes Aprobadas")
-    public void seVisualilzaElTabSolicitudesAprobadas() {
-        ValidacionDeIdentidadService.verifySolicitudesAprobadas();
+    @Then("se visualizan todas las solicitudes en estado (.*)")
+    public void seVisualilzaElTabSolicitudesAprobadas(String solicitudes) {
+        ValidacionDeIdentidadService.verifySolicitudes(solicitudes);
     }
 }

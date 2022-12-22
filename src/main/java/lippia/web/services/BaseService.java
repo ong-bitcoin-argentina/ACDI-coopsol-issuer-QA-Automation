@@ -22,8 +22,14 @@ public class BaseService extends ActionManager {
             case "Validación de identidades":
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Validación de identidades");
                 break;
+            case "Solicitudes Pendientes":
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Solicitudes Pendientes");
+                break;
             case "Solicitudes Aprobadas":
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Solicitudes Aprobadas");
+                break;
+            case "Solicitudes Rechazadas":
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Solicitudes Rechazadas");
                 break;
             case "Cerrar sesión":
                 click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Cerrar sesión");
@@ -58,8 +64,8 @@ public class BaseService extends ActionManager {
                 clickGenericButton("Credenciales");
                 break;
             case "Credenciales en uso":
-                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Credenciales en uso");
-                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Credenciales en uso");
+                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Credenciales en uso");
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, "Credenciales en uso");
                 break;
             case "+ Crear nueva credencial":
                 click(CredencialesConstants.NUEVA_CREDENCIAL_BUTTON);
@@ -68,7 +74,7 @@ public class BaseService extends ActionManager {
         }
     }
 
-    public static void clickGenericButton(String button){
+    public static void clickGenericButton(String button) {
         waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON, button);
         click(ValidacionDeIdentidadConstants.GENERIC_BUTTON, button);
     }
