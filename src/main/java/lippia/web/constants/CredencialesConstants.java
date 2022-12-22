@@ -26,7 +26,19 @@ public class CredencialesConstants {
 
     public static final String CHECK_HASTA="xpath://*[@id='rc-tabs-0-panel-1']/div/div[2]/div/div/div/div/div/table/tbody/tr[%s]/td[6]";
 
-    public static final String GUARDAR_BUTTON = "xpath://*[contains(text(),'Guardar')]";
+    public static final String ADD_CRED_DETL="xpath://*[@class='ant-input']";
+
+    public static final String ADD_CRED_TIPO="xpath://div[contains(@class,'credentialTypesSelect')]";
+
+    public static final String ADD_CRED_TIPO_OPTIONS="xpath://*[contains(@class,'ant-select-dropdown')]/div/div[2]/div[1]/div/div/div[%s]";
+
+    public static final String ADD_CRED_MENU="xpath://*[contains(@class,'ant-select-dropdown')]";
+
+    public static final String ERROR_MESSAGE="xpath://form/div[%s]/span[contains(@class,'ant-typography-danger')]";
+
+    public static final String SAVE_BUTTON="xpath://*[contains(@class,'ant-btn-submit')]";
+
     public static final String INPUT_MESSAGE = "xpath://*[text()='%s']/*[text()='%s']";
     public static final String NUEVA_CREDENCIAL_BUTTON = "xpath://*[text()=\"+ Crear nueva credencial\"]";
+
 }
