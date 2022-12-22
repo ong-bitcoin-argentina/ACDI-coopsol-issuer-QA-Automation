@@ -11,7 +11,6 @@ jobs:
     container: crowdar/lippia:3.1.2.2
     env: 
       TAG: "@Smoke"
-      TESTTYPE: "parallel"
       #LANG: "@EN"
       BROWSERTYPE: "chromeHeadless"
     
@@ -22,7 +21,7 @@ jobs:
                 "TESTTYPE= "$TESTTYPE,
                 "BROWSERTYPE= "$BROWSERTYPE
     - name: Realizando Pruebas
-      run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
+      run: mvn clean test -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
     - name: Subiendo informe
       uses: actions/upload-artifact@v3
       with:
