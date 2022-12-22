@@ -23,6 +23,6 @@ jobs:
     - name: Realizando Pruebas
       run: mvn clean test -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG" && ls -a
     - name: Subiendo informe
-      uses: actions/download-artifact@v3.0.1
+      uses: actions/upload-artifact@v3
       with:
-       path: target/reports/*
+        path: target/reports/
