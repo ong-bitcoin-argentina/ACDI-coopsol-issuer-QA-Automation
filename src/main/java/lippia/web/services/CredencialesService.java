@@ -5,7 +5,9 @@ import com.crowdar.driver.DriverManager;
 import lippia.web.constants.CredencialesConstants;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import java.text.ParseException;
@@ -23,6 +25,12 @@ public class CredencialesService extends ActionManager {
     public static ThreadLocal<String> lastname = new ThreadLocal<>();
     public static ThreadLocal<String> from = new ThreadLocal<>();
     public static ThreadLocal<String> todate = new ThreadLocal<>();
+
+    public static ThreadLocal<String> didCred = new ThreadLocal<>();
+
+    public static ThreadLocal<String> nombreCred = new ThreadLocal<>();
+
+    public static ThreadLocal<String> apellidoCred = new ThreadLocal<>();
 
     public static void selectType(String type) {
         tipo.set(type);
@@ -105,9 +113,64 @@ public class CredencialesService extends ActionManager {
 
     }
 
-    public static void clickGuardar() {
-        click(CredencialesConstants.GUARDAR_BUTTON);
+    public static void clickNuevaCredencial(){
+        WebDriver driver = DriverManager.getDriverInstance();
+        Actions actions = new Actions(driver);
+        waitVisibility(CredencialesConstants.NUEVA_CREDENCIAL_BUTTON);
+        actions.moveToElement(getElement(CredencialesConstants.NUEVA_CREDENCIAL_BUTTON)).click().perform();
     }
+
+    public static void selectTipoCred(String actividad){
+        WebDriver driver = DriverManager.getDriverInstance();
+        Actions actions = new Actions(driver);
+        click(CredencialesConstants.ADD_CRED_TIPO);
+        waitVisibility(CredencialesConstants.ADD_CRED_MENU);
+        for (int i=1;;i++){
+            if (getText(CredencialesConstants.ADD_CRED_TIPO_OPTIONS,String.valueOf(i)).equals(actividad)){
+                actions.moveToElement(getElement(CredencialesConstants.ADD_CRED_TIPO_OPTIONS,String.valueOf(i))).click().perform();
+                break;
+            }
+
+        }
+
+    }
+    public static void fillInformation(String did,String nombre,String apellido,String actividad) {
+         didCred.set(did);
+         nombreCred.set(nombre);
+         apellidoCred.set(apellido);
+         selectTipoCred(actividad);
+         waitVisibility(CredencialesConstants.ADD_CRED_DETL);
+         List<WebElement> list = getElements(CredencialesConstants.ADD_CRED_DETL);
+         for (WebElement element:list){
+             if(element.getAttribute("name").equals("DID") && !did.equals("")){
+                 element.sendKeys(did);
+             }
+             if(element.getAttribute("name").equals("NOMBRE") && !nombre.equals("")){
+                 element.sendKeys(nombre);
+             }
+             if(element.getAttribute("name").equals("APELLIDO") && !apellido.equals("")){
+                 element.sendKeys(apellido);
+             }
+         }
+
+    }
+    public static void saveCred(){
+        click(CredencialesConstants.SAVE_BUTTON);
+    }
+
+    public static void checkMessage(){
+        if(didCred.get().equals("")){
+            Assert.assertTrue(getElement(CredencialesConstants.ERROR_MESSAGE,String.valueOf(2)).isDisplayed());
+        }
+        if(nombreCred.get().equals("")){
+            Assert.assertTrue(getElement(CredencialesConstants.ERROR_MESSAGE,String.valueOf(3)).isDisplayed());
+        }
+        if(apellidoCred.get().equals("")){
+            Assert.assertTrue(getElement(CredencialesConstants.ERROR_MESSAGE,String.valueOf(4)).isDisplayed());
+        }
+
+    }
+
 
     public static void verifyMessage(String didInput, String nombreInput, String apellidoInput, String message) {
         SoftAssert softAssert = new SoftAssert();
