@@ -86,7 +86,7 @@
 				<crowdar.setupStrategy>web.DownloadLatestStrategy</crowdar.setupStrategy>
 				<crowdar.json.path>src/test/resources/json/</crowdar.json.path>
 				<crowdar.driver.capabilities.json_path>src/main/resources/browsers/chromeCapabilitiesGrid.json</crowdar.driver.capabilities.json_path>
-<!--				<cucumber.reporters>&#45;&#45;plugin pretty &#45;&#45;plugin lippia.web.reporters.CucumberReporter: </cucumber.reporters>-->
+				<cucumber.reporters>--plugin pretty --plugin lippia.web.reporters.CucumberReporter: </cucumber.reporters>
 			</properties>
 		</profile>
 				
