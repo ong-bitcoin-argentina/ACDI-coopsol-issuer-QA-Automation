@@ -25,6 +25,12 @@ public class CredencialesService extends ActionManager {
     public static ThreadLocal<String> from = new ThreadLocal<>();
     public static ThreadLocal<String> todate = new ThreadLocal<>();
 
+    public static ThreadLocal<String> didCred = new ThreadLocal<>();
+
+    public static ThreadLocal<String> nombreCred = new ThreadLocal<>();
+
+    public static ThreadLocal<String> apellidoCred = new ThreadLocal<>();
+
     public static void selectType(String type) {
         tipo.set(type);
         WebDriver driver = DriverManager.getDriverInstance();
@@ -128,6 +134,9 @@ public class CredencialesService extends ActionManager {
 
     }
     public static void fillInformation(String did,String nombre,String apellido,String actividad) {
+         didCred.set(did);
+         nombreCred.set(nombre);
+         apellidoCred.set(apellido);
          selectTipoCred(actividad);
          waitVisibility(CredencialesConstants.ADD_CRED_DETL);
          List<WebElement> list = getElements(CredencialesConstants.ADD_CRED_DETL);
@@ -149,7 +158,16 @@ public class CredencialesService extends ActionManager {
     }
 
     public static void checkMessage(){
-        Assert.assertTrue(getElement(CredencialesConstants.ERROR_MESSAGE).isDisplayed());
+        if(didCred.get().equals("")){
+            Assert.assertTrue(getElement(CredencialesConstants.ERROR_MESSAGE,String.valueOf(2)).isDisplayed());
+        }
+        if(nombreCred.get().equals("")){
+            Assert.assertTrue(getElement(CredencialesConstants.ERROR_MESSAGE,String.valueOf(3)).isDisplayed());
+        }
+        if(apellidoCred.get().equals("")){
+            Assert.assertTrue(getElement(CredencialesConstants.ERROR_MESSAGE,String.valueOf(4)).isDisplayed());
+        }
+
     }
 
 }

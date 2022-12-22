@@ -36,7 +36,7 @@ public class CredencialesConstants {
 
     public static final String SAVE_BUTTON="xpath://*[contains(@class,'ant-btn-submit')]";
 
-    public static final String ERROR_MESSAGE="xpath://*[contains(@class,'ant-typography-danger')]";
+    public static final String ERROR_MESSAGE="xpath://form/div[%s]/span[contains(@class,'ant-typography-danger')]";
 
 
 
