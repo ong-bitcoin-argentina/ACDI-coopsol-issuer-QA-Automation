@@ -179,4 +179,17 @@ public class CredencialesService extends ActionManager {
         softAssert.assertTrue(isVisible(CredencialesConstants.INPUT_MESSAGE, apellidoInput, message), String.format("No se encontro el mensaje: %s", message));
         softAssert.assertAll();
     }
+
+    public static void selectMotive(String motivo){
+        waitVisibility(CredencialesConstants.REVOCAR_OPCIONES);
+        String span = CredencialesConstants.REVOCAR_OPCIONES+"/li[%s]/span";
+        for (int i=1;;i++){
+            if (getElement(span,String.valueOf(i)).getText().equals(motivo)){
+                click(getElement(span,String.valueOf(i)));
+                break;
+
+            }
+        }
+        waitVisibility(CredencialesConstants.REVOCAR_MODAL);
+    }
 }

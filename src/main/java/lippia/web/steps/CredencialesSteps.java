@@ -44,5 +44,10 @@ public class CredencialesSteps extends PageSteps {
         CredencialesService.checkMessage();
     }
 
+    @When("el admin selecciona el motivo (.*)")
+    public void selectMotivo(String motivo){
+        CredencialesService.selectMotive(motivo);
+    }
+
 }
 

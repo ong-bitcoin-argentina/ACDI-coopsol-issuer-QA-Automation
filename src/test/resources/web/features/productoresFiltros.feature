@@ -4,6 +4,7 @@ Feature: Productores - Filtros
   Quiero poder filtrar productores
   para contar con un resultado acotado de los mismos
 
+@Ignore
   Scenario Outline: Filtros de busqueda Exitoso de productores
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Productores"

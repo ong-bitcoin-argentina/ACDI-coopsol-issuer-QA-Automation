@@ -18,6 +18,7 @@ Feature: Como usuario de Coopsol quiero cambiar contraseña desde la web
 
 
   @BUG_960
+    @Ignore
   Scenario: Fallido al intentar cambiar pass con valores vacíos
     Given que el admin esta logueado en la web de coopsol.
 

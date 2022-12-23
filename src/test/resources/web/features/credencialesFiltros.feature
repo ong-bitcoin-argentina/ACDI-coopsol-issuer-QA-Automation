@@ -55,6 +55,7 @@ Feature: Credenciales - Filtros
 
 
       #MM-829
+  @Ignore
   Scenario Outline: Usar el Filtro de Credencial revocadas
     Given el admin esta logueado en la web de coopsol
     When  el admin selecciona "Credenciales Revocadas"
