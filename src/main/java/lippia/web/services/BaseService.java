@@ -70,6 +70,10 @@ public class BaseService extends ActionManager {
             case "+ Crear nueva credencial":
                 click(CredencialesConstants.NUEVA_CREDENCIAL_BUTTON);
                 break;
+            case "Revocar":
+                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Revocar");
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Revocar");
+                break;
 
         }
     }

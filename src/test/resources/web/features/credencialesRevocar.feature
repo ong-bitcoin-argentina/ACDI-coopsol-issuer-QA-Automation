@@ -24,15 +24,15 @@ Feature: Credenciales - Revocar
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Credenciales en uso"
     When el admin selecciona "Revocar"
-    When el admin selecciona <motivo>
-    When hago click en el boton "Confirmar"
-    Then Se muestra mensaje "La credencial se ha revocado exitosamente"
+    When el admin selecciona el motivo <motivo>
+#    When hago click en el boton "Confirmar"
+#    Then Se muestra mensaje "La credencial se ha revocado exitosamente"
 
     Examples:
       | motivo                |
-      | Desvinculacion        |
-      | Expiracion            |
-      | Modificacion de datos |
+      | Desvinculación        |
+      | Expiración            |
+      | Modificación de datos |
       | Reemplazo             |
       | Otro                  |
 

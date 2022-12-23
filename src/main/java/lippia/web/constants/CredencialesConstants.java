@@ -41,4 +41,7 @@ public class CredencialesConstants {
     public static final String INPUT_MESSAGE = "xpath://*[text()='%s']/*[text()='%s']";
     public static final String NUEVA_CREDENCIAL_BUTTON = "xpath://*[text()=\"+ Crear nueva credencial\"]";
 
+    public static final String REVOCAR_OPCIONES="xpath://*[contains(@class,'ant-dropdown-menu-vertical')]";
+
+    public static final String REVOCAR_MODAL="xpath://*[contains(@class,'ant-modal-content')]";
 }
