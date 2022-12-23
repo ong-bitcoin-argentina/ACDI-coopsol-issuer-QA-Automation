@@ -5,6 +5,9 @@ import com.crowdar.core.actions.ActionManager;
 import com.crowdar.driver.DriverManager;
 import lippia.web.constants.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -70,7 +73,14 @@ public class BaseService extends ActionManager {
             case "+ Crear nueva credencial":
                 click(CredencialesConstants.NUEVA_CREDENCIAL_BUTTON);
                 break;
-
+            case "Revocar":
+                waitVisibility(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Revocar");
+                click(ValidacionDeIdentidadConstants.GENERIC_BUTTON,"Revocar");
+                break;
+            case "Confirmar":
+                waitVisibility(CredencialesConstants.CONFIRMAR_BUTTON);
+                click(CredencialesConstants.CONFIRMAR_BUTTON);
+                break;
         }
     }
 

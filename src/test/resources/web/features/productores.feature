@@ -25,6 +25,7 @@ Feature: Productores
     Then se edita exitosamente en la lista de productores
 
 #MM-934
+  @Ignore
   Scenario: Caso fallido de registro de un nuevo productor
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Productores"
@@ -34,6 +35,7 @@ Feature: Productores
     Then no se genera un nuevo productor
 
   @BUG_948 #MM-875
+  @Ignore
   Scenario: Caso fallido al editar un productor sin completar campos
     Given que el admin esta logueado en la web de coopsol.
     And haber registrado un productor con anterioridad

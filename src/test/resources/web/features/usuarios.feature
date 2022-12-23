@@ -22,6 +22,7 @@ Feature: Usuarios
 
 
   #MM-823
+  @Ignore
   Scenario Outline: Eliminacion de usuario con rol <rol>
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Usuarios"
@@ -38,6 +39,7 @@ Feature: Usuarios
 
 
   #MM-951
+  @Ignore
   Scenario Outline: Creacion de usuario Fallida
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Usuarios"
