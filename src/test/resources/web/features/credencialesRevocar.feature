@@ -4,6 +4,7 @@ Feature: Credenciales - Revocar
   Como usuario de Coopsol quiero revocar credenciales pendientes
 
   #MM-826
+  @Ignore
   Scenario Outline:  Caso de exito para revocar credenciales pendientes
     Given que el admin esta logueado en la web de coopsol.
     When hago click en la lista de acciones <Revocar>
@@ -25,8 +26,8 @@ Feature: Credenciales - Revocar
     When el admin selecciona "Credenciales en uso"
     When el admin selecciona "Revocar"
     When el admin selecciona el motivo <motivo>
-#    When hago click en el boton "Confirmar"
-#    Then Se muestra mensaje "La credencial se ha revocado exitosamente"
+    When el admin selecciona "Confirmar"
+    Then se muestran un mensaje de "La credencial se ha revocado exitosamente"
 
     Examples:
       | motivo                |
@@ -38,6 +39,7 @@ Feature: Credenciales - Revocar
 
 
 #MM-816
+  @Ignore
   Scenario: [Seleccion multiple] Revocado de credencial exitoso
     Given que el admin esta logueado en la web de coopsol.
     And el admin selecciona "Credenciales en uso"
@@ -46,6 +48,7 @@ Feature: Credenciales - Revocar
     Then se muestra mensaje "Se ha revocado exitosamente la credencial."
 
 #MM-830
+  @Ignore
   Scenario:  Verificar que se despliegue información de  Credenciales revocadas.
     Given que el admin esta logueado en la web de coopsol
     And se encuentra en la pantalla “Credenciales”

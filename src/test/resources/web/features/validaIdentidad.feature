@@ -49,6 +49,7 @@ Feature: Validar identidad
 
 
   @smoke  #MM-909
+  @Ignore
   Scenario: Revertir Solicitudes Rechazadas exitosamente.
     Given que el admin esta logueado en la web de coopsol.
     And  el admin se encuentra en "Validación de identidades"

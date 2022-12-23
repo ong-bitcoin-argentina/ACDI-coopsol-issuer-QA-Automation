@@ -7,6 +7,7 @@ Feature: Credenciales
 
 
  ##MM-819
+  @Ignore
   Scenario: Emitir Exitosamente credenciales pendientes
     Given estoy logueado en la web de coopsol con el usuario "crowdar" y password "Crowdar387!"
     When hago click en Emitir

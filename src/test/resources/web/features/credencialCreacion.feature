@@ -3,6 +3,7 @@
 Feature: Como usuario de Coopsol quiero poder crear una nueva credencial
 
 #MM-826
+  @Ignore
   Scenario: Caso exitoso de creacion de una nueva credencial
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Credenciales"

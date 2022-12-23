@@ -28,6 +28,7 @@ Feature: Templates Tipos de Credenciales
     Then se muestran un mensaje de "Template eliminado exitosamente"
 
     #MM-832
+  @Ignore
   Scenario Outline: Caso exitoso Editar un Template
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Tipos de credenciales"
@@ -79,6 +80,7 @@ Feature: Templates Tipos de Credenciales
 
 
       ##MM-834
+  @Ignore
   Scenario Outline: Editar datos de una credencial de un Template
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Tipos de credenciales"
@@ -99,6 +101,7 @@ Feature: Templates Tipos de Credenciales
 
 
        ##MM-836
+  @Ignore
   Scenario Outline: Crear un nuevo campo para editar en un Template
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Tipos de credenciales"

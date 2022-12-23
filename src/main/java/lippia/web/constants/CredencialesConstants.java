@@ -44,4 +44,6 @@ public class CredencialesConstants {
     public static final String REVOCAR_OPCIONES="xpath://*[contains(@class,'ant-dropdown-menu-vertical')]";
 
     public static final String REVOCAR_MODAL="xpath://*[contains(@class,'ant-modal-content')]";
+
+    public static final String CONFIRMAR_BUTTON="xpath://*[contains(@class,'buttons')]/button[2]";
 }
