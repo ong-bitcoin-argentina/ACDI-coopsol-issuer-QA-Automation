@@ -21,7 +21,7 @@ Feature: Como usuario de Coopsol quiero poder crear una nueva credencial
     Then el campo vacio muesta el mensaje de error  "Requerido"
     Examples:
       | DID                                                 | NOMBRE   | APELLIDO   | ACTIVIDAD PRINCIPAL |
-      | did:ethr:0x843bc178821fgc4e62c3b262a97d39fh3b9b6658 |          | Castellini | Productiva RSK      |
-      | did:ethr:0x843bc178821fgc4e62c3b262a97d39fh3b9b6658 | Giuliana |            | Productiva RSK      |
-      |                                                     | Giuliana | Castellini | Productiva RSK      |
-      |                                                     |          |            | Productiva RSK      |
+      | did:ethr:0x843bc178821fgc4e62c3b262a97d39fh3b9b6658 |          | Castellini | Educativa           |
+      | did:ethr:0x843bc178821fgc4e62c3b262a97d39fh3b9b6658 | Giuliana |            | Educativa           |
+      |                                                     | Giuliana | Castellini | Educativa           |
+      |                                                     |          |            | Educativa           |

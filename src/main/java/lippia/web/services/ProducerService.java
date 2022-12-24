@@ -3,11 +3,15 @@ package lippia.web.services;
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.driver.DriverManager;
+import lippia.web.constants.CredencialesConstants;
 import lippia.web.constants.ProducerConstants;
+import lippia.web.constants.ValidacionDeIdentidadConstants;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
+
+import java.util.List;
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
@@ -52,12 +56,24 @@ public class ProducerService extends ActionManager {
    }
 
    public static void getFirstRes(){
-        Assert.assertTrue(getElement(ProducerConstants.FIRST_RES).isDisplayed());
+        click(ProducerConstants.HIDE);
+        if(getText(CredencialesConstants.TITLE).equals("Tipos de credenciales")){
+            waitVisibility(CredencialesConstants.EDIT_CREDENTIAL);
+        }else {
+            waitVisibility(ProducerConstants.FIRST_RES);
+            Assert.assertTrue(getElement(ProducerConstants.FIRST_RES).isDisplayed());
+        }
 
    }
 
-   public static void clickEdit(){
-        click(ProducerConstants.EDIT_BUTTON);
+   public static void clickEdit()  {
+      if(getText(CredencialesConstants.TITLE).equals("Tipos de credenciales")){
+          waitVisibility(CredencialesConstants.EDIT_CREDENTIAL);
+          click(CredencialesConstants.EDIT_CREDENTIAL);
+      }
+      else{
+          click(ProducerConstants.EDIT_BUTTON);
+      }
    }
 
    public static void editProdDetails(){

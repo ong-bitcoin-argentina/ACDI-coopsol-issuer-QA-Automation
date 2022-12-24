@@ -46,4 +46,7 @@ public class CredencialesConstants {
     public static final String REVOCAR_MODAL="xpath://*[contains(@class,'ant-modal-content')]";
 
     public static final String CONFIRMAR_BUTTON="xpath://*[contains(@class,'buttons')]/button[2]";
+
+    public static final String EDIT_CREDENTIAL="xpath://*[contains(@class,'ant-table-row')]/td[4]/a";
+    public static final String TITLE="xpath://div[contains(@class,'title')]/h1";
 }

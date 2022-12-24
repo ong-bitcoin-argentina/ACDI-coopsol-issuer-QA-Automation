@@ -29,7 +29,7 @@ public class ProducerSteps extends PageSteps {
     }
 
     @And("hago click en el boton “Editar\"")
-    public void edit(){
+    public void edit()  {
         ProducerService.getFirstRes();
         ProducerService.clickEdit();
 

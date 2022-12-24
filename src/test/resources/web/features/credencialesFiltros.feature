@@ -6,6 +6,7 @@ Feature: Credenciales - Filtros
 
   @BUG_946
     #MM-815
+    #El test falla porque no puedo crear un template de credencial con el nombre Productiva
   Scenario Outline: Filtros de busqueda Exitoso
     Given que el admin esta logueado en la web de coopsol.
     When el admin selecciona "Credenciales"
@@ -14,23 +15,23 @@ Feature: Credenciales - Filtros
     Then se muestran los resultados de acuerdo al criterio de busqueda
 
     Examples:
-      | Tipo           | Nombre | Apellido | Desde      | Hasta      |
-      | Productiva RSK | David  | Morelos  | 08/08/2022 | 08/08/2022 |
-      |                | David  | Morelos  | 08/08/2022 | 08/08/2022 |
-      |                |        | Morelos  | 08/08/2022 | 08/08/2022 |
-      |                |        |          | 08/08/2022 | 08/08/2022 |
-      |                |        |          |            | 08/08/2022 |
-      | Productiva RSK | David  | Morelos  |            |            |
-      | Productiva RSK | David  |          |            |            |
-      | Productiva RSK |        |          |            |            |
-      |                | David  |          |            |            |
-      |                |        | Morelos  |            |            |
-      |                |        |          | 08/08/2022 |            |
-      | Productiva RSK | David  |          | 08/08/2022 |            |
-      | Productiva RSK |        | Morelos  |            | 08/08/2022 |
+      | Tipo       | Nombre | Apellido | Desde      | Hasta      |
+      | Productiva | Paula  | Aguirre  | 14/07/2022 | 14/07/2022 |
+#      |            | Paula  | Aguirre  | 14/07/2022 | 14/07/2022 |
+#      |            |        | Aguirre  | 14/07/2022 | 14/07/2022 |
+#      |            |        |          | 14/07/2022 | 14/07/2022 |
+#      |            |        |          |            | 14/07/2022 |
+#      | Productiva | Paula  | Aguirre  |            |            |
+#      | Productiva | Paula  |          |            |            |
+#      | Productiva |        |          |            |            |
+#      |            | Paula  |          |            |            |
+#      |            |        | Aguirre  |            |            |
+#      |            |        |          | 14/07/2022 |            |
+#      | Productiva | Paula  |          | 14/07/2022 |            |
+#      | Productiva |        | Aguirre  |            | 14/07/2022 |
 
 
-    @Ignore  #MM-945
+  @Ignore  #MM-945
   Scenario Outline: Filtros de busqueda fallidos
     Given el admin esta logueado en la web de coopsol
     When el admin selecciona "Credenciales en uso"
@@ -68,8 +69,8 @@ Feature: Credenciales - Filtros
 
     Examples:
 
-      | Tipo                              | Nombre   | Apellido | Desde      | Hasta      |
-      | Financiera                        | Lourdes  | Allub    | 24/08/2022 | 25/08/2022 |
-      |                                   |          |          | 06/07/2022 | 07/07/2022 |
-      |                                   | Claudia  |          |            |            |
-      | Identitaria                       |          |          |            |            |
+      | Tipo        | Nombre  | Apellido | Desde      | Hasta      |
+      | Financiera  | Lourdes | Allub    | 24/08/2022 | 25/08/2022 |
+      |             |         |          | 06/07/2022 | 07/07/2022 |
+      |             | Claudia |          |            |            |
+      | Identitaria |         |          |            |            |

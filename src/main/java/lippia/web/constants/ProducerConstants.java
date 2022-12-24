@@ -31,9 +31,12 @@ public class ProducerConstants {
 
     public static final String FILTER_DNI="xpath://*[@id='dni']";
 
-    public static final String FIRST_RES="xpath://*[@id='root']/div/div/div/div/div/div[2]/div/div[2]/div[2]/div/div/div/div/div/table/tbody/tr[1]";
+    public static final String FIRST_RES="xpath://*[contains(@class,'ant-table-row')]";
 
-    public static final String EDIT_BUTTON="xpath://*[@id='root']/div/div/div/div/div/div[2]/div/div[2]/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[6]/div/button";
+    public static final String HIDE="xpath://*[contains(@class,'anticon-caret-left')]";
+
+    public static final String EDIT_BUTTON="xpath://*[contains(@class,'ant-table-row')]/td[6]/div/button";
+
 
     public static final String PROD_LASTNAME="xpath://*[@id='root']/div/div/div/div/div/div[2]/div/div[2]/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[1]";
 
