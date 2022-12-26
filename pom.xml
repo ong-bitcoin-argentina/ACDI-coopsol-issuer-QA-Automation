@@ -29,7 +29,7 @@
 		<!-- cucumber options -->
 		<cucumber.stepsDefinitions>--glue / </cucumber.stepsDefinitions>
 		<cucumber.hooks>--glue	com/crowdar/bdd/cukes/hooks</cucumber.hooks>
-		<cucumber.tags>--tags '@Smoke'</cucumber.tags>
+		<cucumber.tags>--tags '@configuracion'</cucumber.tags>
 		<cucumber.reporters>--plugin pretty --plugin lippia.web.reporters.CucumberReporter:</cucumber.reporters>
 		<crowdar.cucumber.option>src/test/resources/web/features ${cucumber.hooks} ${cucumber.stepsDefinitions} --tags 'not @Ignore' ${cucumber.tags} ${cucumber.reporters}</crowdar.cucumber.option>
 
@@ -62,14 +62,6 @@
 				<crowdar.setupStrategy>web.DownloadLatestStrategy</crowdar.setupStrategy>
 			</properties>
 		</profile>
-		
-		<profile>
-			<id>chromeHeadless</id>
-			<properties>
-				<crowdar.projectType>WEB_CHROME</crowdar.projectType>
-				<crowdar.driver.capabilities.json_path>src/main/resources/browsers/chromeCapabilitiesGrid.json</crowdar.driver.capabilities.json_path>
-			</properties>
-		</profile>
 
 		<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		<!--   Profiles related to Driver Instance petition   -->
@@ -85,6 +77,18 @@
 			</properties>
 		</profile>
 
+		<profile>
+			<id>chromeHeadless</id>
+			<properties>
+				<profileName>LocalHeadless</profileName>
+				<crowdar.projectType>WEB_CHROME</crowdar.projectType>
+				<cucumber.runner>testng.xml</cucumber.runner>
+				<crowdar.setupStrategy>web.DownloadLatestStrategy</crowdar.setupStrategy>
+				<crowdar.json.path>src/test/resources/json/</crowdar.json.path>
+				<crowdar.driver.capabilities.json_path>src/main/resources/browsers/chromeCapabilitiesGrid.json</crowdar.driver.capabilities.json_path>
+				<cucumber.reporters>--plugin pretty --plugin lippia.web.reporters.CucumberReporter: </cucumber.reporters>
+			</properties>
+		</profile>
 				
 		<profile> 
 			<id>stack_local</id>

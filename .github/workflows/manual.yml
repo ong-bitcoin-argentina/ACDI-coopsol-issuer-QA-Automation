@@ -1,29 +1,61 @@
-name: Workflow Web Auto
+name: Workflow Web Manual
 
-on: 
- push:
-  branches: [ 'develop' ]
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_tag:
+        description: 'Tag del test'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - '@smoke'
+          - '@regression'
+
+        #test_tag:
+        #  description: 'Tag del test'
+        #  required: true
+        #  default: '@smoke'
+
+#      test_type:
+#        description: 'Tipo de test'
+#        required: true
+#        default: 'warning'
+#        type: choice
+#        options:
+#          - parallel
+#          - Secuencial
+
+        #test_type:
+        #  description: 'Tipo de test'
+        #  required: true
+        #  default: 'parallel'
+
+      browser_type:
+        description: 'Tipo de Browser'
+        required: true
+        default: 'chromeHeadless'
+
+
 
 jobs:
-  
   testing:
     runs-on: ubuntu-latest
     container: crowdar/lippia:3.1.2.2
-    env: 
-      TAG: "@Smoke"
-      TESTTYPE: "sequential"
-      #LANG: "@EN"
-      BROWSERTYPE: "chromeHeadless"
-    
+    env:
+      TAG: '${{ github.event.inputs.test_tag }}'
+
+
     steps:
-    - uses: actions/checkout@v3
-    - name: valores de las variables de entorno
-      run: echo "TAG= "$TAG,
-                "TESTTYPE= "$TESTTYPE,
-                "BROWSERTYPE= "$BROWSERTYPE
-    - name: Realizando Pruebas
-      run: mvn clean test -P$TESTTYPE -P$BROWSERTYPE -Dcucumber.tags="--tags $TAG"
-    - name: Subiendo informe
-      uses: actions/upload-artifact@v3
-      with:
-        path: target/reports/
+      - uses: actions/checkout@v3
+      - name: valores de las variables de entorno
+        run: echo $TAG
+
+      - name: Realizando Pruebas
+        run: mvn clean test -PchromeHeadless -Dcucumber.tags="--tags $TAG"
+        continue-on-error: true
+      - name: Subiendo informe
+        uses: actions/upload-artifact@v3
+        with:
+          path: target/reports/
