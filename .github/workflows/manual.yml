@@ -18,14 +18,14 @@ on:
         #  required: true
         #  default: '@smoke'
 
-      test_type:
-        description: 'Tipo de test'
-        required: true
-        default: 'warning'
-        type: choice
-        options:
-          - parallel
-          - Secuencial
+#      test_type:
+#        description: 'Tipo de test'
+#        required: true
+#        default: 'warning'
+#        type: choice
+#        options:
+#          - parallel
+#          - Secuencial
 
         #test_type:
         #  description: 'Tipo de test'
